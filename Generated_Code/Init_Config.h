@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K22P121M120SF7RM, Rev. 1, March 24, 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-19, 14:49, # CodeGen: 0
+**     Date/Time   : 2019-10-21, 12:09, # CodeGen: 22
 **     Abstract    :
 **         This file collects Processor Expert components configuration 
 **         and interface files.
@@ -110,10 +110,8 @@
 **              Reset Pin                                  : RESET_b
 **            Debug interface (JTAG)                       : 
 **              JTAG Mode                                  : JTAG
-**                TDI                                      : Enabled
-**                  TDI Pin                                : PTA1/UART0_RX/FTM0_CH6/JTAG_TDI/EZP_DI
-**                TDO                                      : Enabled
-**                  TDO Pin                                : PTA2/UART0_TX/FTM0_CH7/JTAG_TDO/TRACE_SWO/EZP_DO
+**                TDI                                      : Disabled
+**                TDO                                      : Disabled
 **                TCK                                      : Enabled
 **                  TCK Pin                                : PTA0/UART0_CTS_b/FTM0_CH5/JTAG_TCLK/SWD_CLK/EZP_CLK
 **                TMS                                      : Enabled

@@ -6,7 +6,7 @@
 **     Version     : Component 01.048, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-19, 15:29, # CodeGen: 3
+**     Date/Time   : 2019-10-21, 14:57, # CodeGen: 32
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -59,11 +59,11 @@
 #include "Term1.h"
 #include "Inhr1.h"
 #include "ASerialLdd1.h"
-#include "x.h"
+#include "x_step.h"
 #include "BitIoLdd1.h"
-#include "y.h"
+#include "y_step.h"
 #include "BitIoLdd2.h"
-#include "z.h"
+#include "z_step.h"
 #include "BitIoLdd3.h"
 #include "FC321.h"
 #include "RealTimeLdd1.h"
@@ -71,12 +71,12 @@
 #include "PWM1.h"
 #include "PwmLdd1.h"
 #include "TU3.h"
-#include "Reset.h"
-#include "BitIoLdd4.h"
-#include "Sleep.h"
+#include "Sleep_x.h"
 #include "BitIoLdd5.h"
 #include "Dir_x.h"
 #include "BitIoLdd6.h"
+#include "Reset_x.h"
+#include "BitIoLdd4.h"
 #include "Dir_y.h"
 #include "BitIoLdd7.h"
 #include "Dir_z.h"
@@ -87,6 +87,20 @@
 #include "BitIoLdd10.h"
 #include "Mode_3.h"
 #include "BitIoLdd11.h"
+#include "Red_LED.h"
+#include "BitIoLdd15.h"
+#include "Green_LED.h"
+#include "BitIoLdd16.h"
+#include "Blue_LED.h"
+#include "BitIoLdd17.h"
+#include "Reset_z.h"
+#include "BitIoLdd12.h"
+#include "Sleep_z.h"
+#include "BitIoLdd13.h"
+#include "Reset_y.h"
+#include "BitIoLdd14.h"
+#include "Sleep_y.h"
+#include "BitIoLdd18.h"
 
 
 /*

@@ -7,7 +7,7 @@
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-19, 14:49, # CodeGen: 0
+**     Date/Time   : 2019-10-21, 13:08, # CodeGen: 26
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -22,7 +22,7 @@
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
 **            Period device                                : FTM0_MOD
-**            Period                                       : 10 ms
+**            Period                                       : 50 ms
 **            Interrupt                                    : Disabled
 **          Channel list                                   : 1
 **            Channel 0                                    : 
@@ -131,14 +131,14 @@ extern "C" {
 #define __BWUserType_TU3_TValueType
   typedef uint16_t TU3_TValueType ;    /* Type for data parameters of methods */
 #endif
-#define TU3_CNT_INP_FREQ_U_0 0x00500000UL /* Counter input frequency in Hz */
-#define TU3_CNT_INP_FREQ_R_0 5242876.24190631F /* Counter input frequency in Hz */
+#define TU3_CNT_INP_FREQ_U_0 0x00140000UL /* Counter input frequency in Hz */
+#define TU3_CNT_INP_FREQ_R_0 1310720.778463285F /* Counter input frequency in Hz */
 #define TU3_CNT_INP_FREQ_COUNT 0U      /* Count of predefined counter input frequencies */
-#define TU3_PERIOD_TICKS   0xCCCDUL    /* Initialization value of period in 'counter ticks' */
+#define TU3_PERIOD_TICKS   0x00010000UL /* Initialization value of period in 'counter ticks' */
 #define TU3_NUMBER_OF_CHANNELS 0x01U   /* Count of predefined channels */
 #define TU3_COUNTER_WIDTH  0x10U       /* Counter width in bits  */
 #define TU3_COUNTER_DIR    DIR_UP      /* Direction of counting */
-#define TU3_OFFSET_0_TICKS 0xCCCDul    /* Initialization value of offset as 'counter ticks' for channel 0 */
+#define TU3_OFFSET_0_TICKS 0x3333ul    /* Initialization value of offset as 'counter ticks' for channel 0 */
 /*! Peripheral base address of a device allocated by the component. This constant can be used directly in PDD macros. */
 #define TU3_PRPH_BASE_ADDRESS  0x40038000U
   

@@ -53,7 +53,7 @@ all: Assignment2-Percy.elf secondary-outputs
 Assignment2-Percy.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross ARM C++ Linker'
-	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/kimbe/OneDrive/Documents/Git_Hub/labs-kimbender/Assignment2-Percy/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/kimbe/OneDrive/Documents/Git_Hub/labs-kimbender/Assignment2-Percy/Project_Settings/Linker_Files" -Wl,-Map,"Assignment2-Percy.map" -specs=nano.specs -specs=nosys.specs -o "Assignment2-Percy.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Labs/Assignment2-Percy/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Labs/Assignment2-Percy/Project_Settings/Linker_Files" -Wl,-Map,"Assignment2-Percy.map" -specs=nano.specs -specs=nosys.specs -o "Assignment2-Percy.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

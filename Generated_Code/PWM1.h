@@ -7,7 +7,7 @@
 **     Version     : Component 02.241, Driver 01.01, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-19, 16:28, # CodeGen: 5
+**     Date/Time   : 2019-10-21, 13:08, # CodeGen: 26
 **     Abstract    :
 **         This component implements a pulse-width modulation generator
 **         that generates signal with variable duty and fixed cycle. 
@@ -18,7 +18,7 @@
 **          Output pin                                     : PTC4/LLWU_P8/SPI0_PCS0/UART1_TX/FTM0_CH3/FBa_AD11/CMP1_OUT/LPUART0_TX
 **          Counter                                        : FTM0_CNT
 **          Interrupt service/event                        : Disabled
-**          Period                                         : 10 ms
+**          Period                                         : 50 ms
 **          Starting pulse width                           : 10 ms
 **          Initial polarity                               : low
 **          Same period in modes                           : no
@@ -185,7 +185,7 @@ extern "C" {
 **     Parameters  :
 **         NAME            - DESCRIPTION
 **         Time            - Duty to set [in milliseconds]
-**                      (0 to 10 ms in high speed mode)
+**                      (0 to 50 ms in high speed mode)
 **     Returns     :
 **         ---             - Error code, possible codes:
 **                           ERR_OK - OK

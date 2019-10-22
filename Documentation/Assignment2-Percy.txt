@@ -21,53 +21,53 @@ Module "Term1"     (component Term)
    - Term1_ReadChar -Read char from terminal.
    - Term1_KeyPressed -Test if char was received from the terminal.
 
-Module "x"         (component BitIO)
-   - x_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
-   - x_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and returned.
-                If the direction is [output] then the last written value is returned (see <Safe mode> property for limitations).
-                This method cannot be disabled if direction is [input].
-   - x_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or a 
-                register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - x_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only if 
+Module "x_step"    (component BitIO)
+   - x_step_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
+   - x_step_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - x_step_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - x_step_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - x_step_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
                 the direction = _[output]_ or _[input/output]_.
-   - x_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-   - x_NegVal -Negates (inverts) the output value. It is equivalent to the [PutVal(!GetVal())]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
+   - x_step_NegVal -Negates (inverts) the output value. It is equivalent to the [PutVal(!GetVal())]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
 
-Module "y"         (component BitIO)
-   - y_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
-   - y_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and returned.
-                If the direction is [output] then the last written value is returned (see <Safe mode> property for limitations).
-                This method cannot be disabled if direction is [input].
-   - y_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or a 
-                register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - y_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only if 
+Module "y_step"    (component BitIO)
+   - y_step_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
+   - y_step_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - y_step_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - y_step_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - y_step_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
                 the direction = _[output]_ or _[input/output]_.
-   - y_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-   - y_NegVal -Negates (inverts) the output value. It is equivalent to the [PutVal(!GetVal())]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
+   - y_step_NegVal -Negates (inverts) the output value. It is equivalent to the [PutVal(!GetVal())]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
 
-Module "z"         (component BitIO)
-   - z_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
-   - z_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and returned.
-                If the direction is [output] then the last written value is returned (see <Safe mode> property for limitations).
-                This method cannot be disabled if direction is [input].
-   - z_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or a 
-                register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - z_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only if 
+Module "z_step"    (component BitIO)
+   - z_step_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
+   - z_step_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - z_step_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - z_step_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - z_step_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
                 the direction = _[output]_ or _[input/output]_.
-   - z_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-   - z_NegVal -Negates (inverts) the output value. It is equivalent to the [PutVal(!GetVal())]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
+   - z_step_NegVal -Negates (inverts) the output value. It is equivalent to the [PutVal(!GetVal())]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
 
 Module "FC321"     (component FreeCntr32)
    - FC321_Reset -This method clears the counter.
@@ -128,32 +128,18 @@ Module "TU3"       (component TimerUnit_LDD)
    - TU3_SelectOutputAction -Sets the type of compare match and counter overflow action on channel output. This method is 
                 available when at least one channel is configured.
 
-Module "Reset"     (component BitIO)
-   - Reset_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+Module "Sleep_x"   (component BitIO)
+   - Sleep_x_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
                 returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
                 limitations). This method cannot be disabled if direction is [input].
-   - Reset_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or 
-                a register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - Reset_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+   - Sleep_x_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - Sleep_x_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
                 only if the direction = _[output]_ or _[input/output]_.
-   - Reset_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-
-Module "Sleep"     (component BitIO)
-   - Sleep_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
-   - Sleep_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
-                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
-                limitations). This method cannot be disabled if direction is [input].
-   - Sleep_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or 
-                a register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - Sleep_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
-                only if the direction = _[output]_ or _[input/output]_.
-   - Sleep_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
+   - Sleep_x_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
 
 Module "Dir_x"     (component BitIO)
    - Dir_x_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
@@ -170,6 +156,19 @@ Module "Dir_x"     (component BitIO)
                 direction = _[output]_ or _[input/output]_.
    - Dir_x_NegVal -Negates (inverts) the output value. It is equivalent to the [PutVal(!GetVal())]. This method is available 
                 only if the direction = _[output]_ or _[input/output]_.
+
+Module "Reset_x"   (component BitIO)
+   - Reset_x_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - Reset_x_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - Reset_x_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - Reset_x_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
 
 Module "Dir_y"     (component BitIO)
    - Dir_y_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
@@ -243,6 +242,104 @@ Module "Mode_3"    (component BitIO)
    - Mode_3_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
                 only if the direction = _[output]_ or _[input/output]_.
    - Mode_3_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
+
+Module "Red_LED"   (component BitIO)
+   - Red_LED_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - Red_LED_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - Red_LED_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - Red_LED_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
+   - Red_LED_NegVal -Negates (inverts) the output value. It is equivalent to the [PutVal(!GetVal())]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+
+Module "Green_LED" (component BitIO)
+   - Green_LED_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
+   - Green_LED_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - Green_LED_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a 
+                memory or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - Green_LED_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - Green_LED_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
+   - Green_LED_NegVal -Negates (inverts) the output value. It is equivalent to the [PutVal(!GetVal())]. This method is 
+                available only if the direction = _[output]_ or _[input/output]_.
+
+Module "Blue_LED"  (component BitIO)
+   - Blue_LED_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - Blue_LED_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - Blue_LED_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - Blue_LED_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
+   - Blue_LED_NegVal -Negates (inverts) the output value. It is equivalent to the [PutVal(!GetVal())]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+
+Module "Reset_z"   (component BitIO)
+   - Reset_z_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - Reset_z_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - Reset_z_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - Reset_z_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
+
+Module "Sleep_z"   (component BitIO)
+   - Sleep_z_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - Sleep_z_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - Sleep_z_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - Sleep_z_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
+
+Module "Reset_y"   (component BitIO)
+   - Reset_y_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - Reset_y_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - Reset_y_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - Reset_y_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
+
+Module "Sleep_y"   (component BitIO)
+   - Sleep_y_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - Sleep_y_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - Sleep_y_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - Sleep_y_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
                 the direction = _[output]_ or _[input/output]_.
 
 Module "Cpu"       (component MK22FN512DC12)

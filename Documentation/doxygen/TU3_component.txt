@@ -18,13 +18,13 @@ by the component.
 <td class="regNotResetVal">0x45000001</td>
  <td>SIM_SCGC6 register, peripheral TU3.</td></tr>
 <tr><td>0x40048038</td><td>SIM_SCGC5</td>
-<td class="regNotResetVal">0x00042D82</td>
+<td class="regNotResetVal">0x00042F82</td>
  <td>SIM_SCGC5 register, peripheral TU3.</td></tr>
 <tr><td>0x40038054</td><td>FTM0_MODE</td>
 <td class="regResetVal">0x00000004</td>
  <td>FTM0_MODE register, peripheral TU3.</td></tr>
 <tr><td>0x40038000</td><td>FTM0_SC</td>
-<td class="regNotResetVal">0x0000000A</td>
+<td class="regNotResetVal">0x0000000C</td>
  <td>FTM0_SC register, peripheral TU3.</td></tr>
 <tr><td>0x4003804C</td><td>FTM0_CNTIN</td>
 <td class="regResetVal">0x00000000</td>
@@ -57,10 +57,10 @@ by the component.
 <td class="regResetVal">0x00000000</td>
  <td>FTM0_C7SC register, peripheral TU3.</td></tr>
 <tr><td>0x40038008</td><td>FTM0_MOD</td>
-<td class="regNotResetVal">0x0000CCCC</td>
+<td class="regNotResetVal">0x0000FFFF</td>
  <td>FTM0_MOD register, peripheral TU3.</td></tr>
 <tr><td>0x40038028</td><td>FTM0_C3V</td>
-<td class="regNotResetVal">0x0000CCCD</td>
+<td class="regNotResetVal">0x00003333</td>
  <td>FTM0_C3V register, peripheral TU3.</td></tr>
 <tr><td>0x4004B010</td><td>PORTC_PCR4</td>
 <td class="regNotResetVal">0x00000400</td>
@@ -189,14 +189,14 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40048038</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00042D82</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00042F82</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00040182</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>13</td><td>PORTE</td><td>0x01</td><td>Port E Clock Gate Control</td>
 <tr><td>12</td><td>PORTD</td><td>0x00</td><td>Port D Clock Gate Control</td>
 <tr><td>11</td><td>PORTC</td><td>0x01</td><td>Port C Clock Gate Control</td>
 <tr><td>10</td><td>PORTB</td><td>0x01</td><td>Port B Clock Gate Control</td>
-<tr><td>9</td><td>PORTA</td><td>0x00</td><td>Port A Clock Gate Control</td>
+<tr><td>9</td><td>PORTA</td><td>0x01</td><td>Port A Clock Gate Control</td>
 <tr><td>0</td><td>LPTMR</td><td>0x00</td><td>Low Power Timer Access Control</td>
 </tr></table>
 <div class="reghdr1">FTM0_MODE</div>
@@ -303,14 +303,14 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40038000</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000000A</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000000C</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>7</td><td>TOF</td><td>0x00</td><td>Timer Overflow Flag</td>
 <tr><td>6</td><td>TOIE</td><td>0x00</td><td>Timer Overflow Interrupt Enable</td>
 <tr><td>5</td><td>CPWMS</td><td>0x00</td><td>Center-Aligned PWM Select</td>
 <tr><td>3 - 4</td><td>CLKS</td><td>0x00</td><td>Clock Source Selection</td>
-<tr><td>0 - 2</td><td>PS</td><td>0x00</td><td>Prescale Factor Selection</td>
+<tr><td>0 - 2</td><td>PS</td><td>0x04</td><td>Prescale Factor Selection</td>
 </tr></table>
 <div class="reghdr1">FTM0_CNTIN</div>
 <div class="regdiag">
@@ -928,7 +928,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40038008</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000CCCC</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000FFFF</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 15</td><td>MOD</td><td>0x8000</td><td>Modulo Value</td>
@@ -975,10 +975,10 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40038028</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000CCCD</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00003333</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
-<tr><td>0 - 15</td><td>VAL</td><td>0x8000</td><td>Channel Value</td>
+<tr><td>0 - 15</td><td>VAL</td><td>0x00</td><td>Channel Value</td>
 </tr></table>
 <div class="reghdr1">PORTC_PCR4</div>
 <div class="regdiag">
@@ -1053,7 +1053,7 @@ registers of the peripheral(s) configured by the component.
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
 **            Period device                                : FTM0_MOD
-**            Period                                       : 10 ms
+**            Period                                       : 50 ms
 **            Interrupt                                    : Disabled
 **          Channel list                                   : 1
 **            Channel 0                                    : 

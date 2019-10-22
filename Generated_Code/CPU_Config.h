@@ -6,7 +6,7 @@
 **     Version     : Component 01.048, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-20, 12:01, # CodeGen: 20
+**     Date/Time   : 2019-10-22, 12:05, # CodeGen: 33
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -643,11 +643,11 @@ typedef struct {
 
 /* JTAG TDI pin initialization 
    Property: Common settings\Debug interface (JTAG)\TDI pin */
-#define CPU_JTAG_TDI_PIN                                   0x01U     /* JTAG TDI pin initialized */ 
+#define CPU_JTAG_TDI_PIN                                   0x00U     /* JTAG TDI pin not initialized */ 
 
 /* JTAG TDO pin initialization 
    Property: Common settings\Debug interface (JTAG)\TDO pin */
-#define CPU_JTAG_TDO_PIN                                   0x01U     /* JTAG TDO pin initialized */ 
+#define CPU_JTAG_TDO_PIN                                   0x00U     /* JTAG TDO pin not initialized */ 
 
 /* JTAG TCK pin initialization 
    Property: Common settings\Debug interface (JTAG)\TCK pin */

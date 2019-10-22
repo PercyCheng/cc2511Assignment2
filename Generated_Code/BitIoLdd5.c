@@ -7,7 +7,7 @@
 **     Version     : Component 01.033, Driver 01.03, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-19, 15:29, # CodeGen: 3
+**     Date/Time   : 2019-10-21, 14:19, # CodeGen: 28
 **     Abstract    :
 **         The HAL BitIO component provides a low level API for unified
 **         access to general purpose digital input/output pins across
@@ -17,16 +17,15 @@
 **         portable to various microprocessors.
 **     Settings    :
 **          Component name                                 : BitIoLdd5
-**          Pin for I/O                                    : ADC0_SE13/PTB3/I2C0_SDA/UART0_CTS_b/FTM0_FLT0
-**          Direction                                      : Input/Output
+**          Pin for I/O                                    : ADC0_SE4b/CMP1_IN0/PTC2/SPI0_PCS2/UART1_CTS_b/FTM0_CH1/FBa_AD12/I2S0_TX_FS/LPUART0_CTS_b
+**          Direction                                      : Output
 **          Initialization                                 : 
 **            Init. direction                              : Output
-**            Init. value                                  : 0
+**            Init. value                                  : 1
 **            Auto initialization                          : yes
 **          Safe mode                                      : yes
 **     Contents    :
 **         Init   - LDD_TDeviceData* BitIoLdd5_Init(LDD_TUserData *UserDataPtr);
-**         SetDir - void BitIoLdd5_SetDir(LDD_TDeviceData *DeviceDataPtr, bool Dir);
 **         GetVal - bool BitIoLdd5_GetVal(LDD_TDeviceData *DeviceDataPtr);
 **         PutVal - void BitIoLdd5_PutVal(LDD_TDeviceData *DeviceDataPtr, bool Val);
 **         ClrVal - void BitIoLdd5_ClrVal(LDD_TDeviceData *DeviceDataPtr);
@@ -127,17 +126,17 @@ LDD_TDeviceData* BitIoLdd5_Init(LDD_TUserData *UserDataPtr)
   DeviceDataPrv = &DeviceDataPrv__DEFAULT_RTOS_ALLOC;
   DeviceDataPrv->UserDataPtr = UserDataPtr; /* Store the RTOS device structure */
   /* Enable device clock gate */
-  /* SIM_SCGC5: PORTB=1 */
-  SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
+  /* SIM_SCGC5: PORTC=1 */
+  SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;
   /* Configure pin as output */
-  /* GPIOB_PDDR: PDD|=8 */
-  GPIOB_PDDR |= GPIO_PDDR_PDD(0x08);
+  /* GPIOC_PDDR: PDD|=4 */
+  GPIOC_PDDR |= GPIO_PDDR_PDD(0x04);
   /* Set initialization value */
-  /* GPIOB_PDOR: PDO&=~8 */
-  GPIOB_PDOR &= (uint32_t)~(uint32_t)(GPIO_PDOR_PDO(0x08));
+  /* GPIOC_PDOR: PDO|=4 */
+  GPIOC_PDOR |= GPIO_PDOR_PDO(0x04);
   /* Initialization of pin routing */
-  /* PORTB_PCR3: ISF=0,MUX=1 */
-  PORTB_PCR3 = (uint32_t)((PORTB_PCR3 & (uint32_t)~(uint32_t)(
+  /* PORTC_PCR2: ISF=0,MUX=1 */
+  PORTC_PCR2 = (uint32_t)((PORTC_PCR2 & (uint32_t)~(uint32_t)(
                 PORT_PCR_ISF_MASK |
                 PORT_PCR_MUX(0x06)
                )) | (uint32_t)(
@@ -147,35 +146,6 @@ LDD_TDeviceData* BitIoLdd5_Init(LDD_TUserData *UserDataPtr)
   PE_LDD_RegisterDeviceStructure(PE_LDD_COMPONENT_BitIoLdd5_ID,DeviceDataPrv);
   return ((LDD_TDeviceData *)DeviceDataPrv);
 }
-/*
-** ===================================================================
-**     Method      :  BitIoLdd5_SetDir (component BitIO_LDD)
-*/
-/*!
-**     @brief
-**         Sets a pin direction (available only if the direction =
-**         _[input/output]_).
-**     @param
-**         DeviceDataPtr   - Device data structure
-**                           pointer returned by <Init> method.
-**     @param
-**         Dir             - Direction to set. Possible values:
-**                           <false> - Input
-**                           <true> - Output
-*/
-/* ===================================================================*/
-void BitIoLdd5_SetDir(LDD_TDeviceData *DeviceDataPtr, bool Dir)
-{
-  (void)DeviceDataPtr;                 /* Parameter is not used, suppress unused argument warning */
-  if (Dir) {
-    /* Output */
-    GPIO_PDD_SetPortOutputDirectionMask(BitIoLdd5_MODULE_BASE_ADDRESS, BitIoLdd5_PORT_MASK);
-  } else {
-    /* Input */
-    GPIO_PDD_SetPortInputDirectionMask(BitIoLdd5_MODULE_BASE_ADDRESS, BitIoLdd5_PORT_MASK);
-  }
-}
-
 /*
 ** ===================================================================
 **     Method      :  BitIoLdd5_GetVal (component BitIO_LDD)
@@ -201,13 +171,7 @@ bool BitIoLdd5_GetVal(LDD_TDeviceData *DeviceDataPtr)
   uint32_t PortData;                   /* Port data masked according to the bit used */
 
   (void)DeviceDataPtr;                 /* Parameter is not used, suppress unused argument warning */
-  if ((GPIO_PDD_GetPortDirection(BitIoLdd5_MODULE_BASE_ADDRESS) & BitIoLdd5_PORT_MASK) == 0U) {
-    /* Port is configured as input */
-    PortData = GPIO_PDD_GetPortDataInput(BitIoLdd5_MODULE_BASE_ADDRESS) & BitIoLdd5_PORT_MASK;
-  } else {
-    /* Port is configured as output */
-    PortData = GPIO_PDD_GetPortDataOutput(BitIoLdd5_MODULE_BASE_ADDRESS) & BitIoLdd5_PORT_MASK;
-  }
+  PortData = GPIO_PDD_GetPortDataOutput(BitIoLdd5_MODULE_BASE_ADDRESS) & BitIoLdd5_PORT_MASK;
   return (PortData != 0U) ? (bool)TRUE : (bool)FALSE;
 }
 

@@ -19,17 +19,17 @@ by the component.
 <tr><td colspan="4" class="ttitle1">BitIoLdd2 Initialization</td></tr>
 <tr><td class="ttitle2">Address</td><td class="ttitle2">Register</td><td class="ttitle2">Register Value</td><td class="ttitle2">Register Description</td></tr>
 <tr><td>0x40048038</td><td>SIM_SCGC5</td>
-<td class="regNotResetVal">0x00042582</td>
+<td class="regNotResetVal">0x00042782</td>
  <td>SIM_SCGC5 register, peripheral BitIoLdd2.</td></tr>
-<tr><td>0x400FF054</td><td>GPIOB_PDDR</td>
-<td class="regNotResetVal">0x00000080</td>
- <td>GPIOB_PDDR register, peripheral BitIoLdd2.</td></tr>
-<tr><td>0x400FF040</td><td>GPIOB_PDOR</td>
+<tr><td>0x400FF014</td><td>GPIOA_PDDR</td>
+<td class="regNotResetVal">0x00000020</td>
+ <td>GPIOA_PDDR register, peripheral BitIoLdd2.</td></tr>
+<tr><td>0x400FF000</td><td>GPIOA_PDOR</td>
 <td class="regResetVal">0x00000000</td>
- <td>GPIOB_PDOR register, peripheral BitIoLdd2.</td></tr>
-<tr><td>0x4004A01C</td><td>PORTB_PCR7</td>
-<td class="regNotResetVal">0x00000100</td>
- <td>PORTB_PCR7 register, peripheral BitIoLdd2.</td></tr>
+ <td>GPIOA_PDOR register, peripheral BitIoLdd2.</td></tr>
+<tr><td>0x40049014</td><td>PORTA_PCR5</td>
+<td class="regNotResetVal">0x00000101</td>
+ <td>PORTA_PCR5 register, peripheral BitIoLdd2.</td></tr>
 </table>
 Color Denotes Reset Value
 <br/>
@@ -84,17 +84,17 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40048038</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00042582</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00042782</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00040182</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>13</td><td>PORTE</td><td>0x01</td><td>Port E Clock Gate Control</td>
 <tr><td>12</td><td>PORTD</td><td>0x00</td><td>Port D Clock Gate Control</td>
 <tr><td>11</td><td>PORTC</td><td>0x00</td><td>Port C Clock Gate Control</td>
 <tr><td>10</td><td>PORTB</td><td>0x01</td><td>Port B Clock Gate Control</td>
-<tr><td>9</td><td>PORTA</td><td>0x00</td><td>Port A Clock Gate Control</td>
+<tr><td>9</td><td>PORTA</td><td>0x01</td><td>Port A Clock Gate Control</td>
 <tr><td>0</td><td>LPTMR</td><td>0x00</td><td>Low Power Timer Access Control</td>
 </tr></table>
-<div class="reghdr1">GPIOB_PDDR</div>
+<div class="reghdr1">GPIOA_PDDR</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -130,13 +130,13 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400FF054</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000080</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400FF014</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000020</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>PDD</td><td>0x00</td><td>Port Data Direction</td>
 </tr></table>
-<div class="reghdr1">GPIOB_PDOR</div>
+<div class="reghdr1">GPIOA_PDOR</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -172,13 +172,13 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400FF040</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400FF000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>PDO</td><td>0x00</td><td>Port Data Output</td>
 </tr></table>
-<div class="reghdr1">PORTB_PCR7</div>
+<div class="reghdr1">PORTA_PCR5</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -217,14 +217,14 @@ registers of the peripheral(s) configured by the component.
 </tr>
 <tr class="trd1r">
 <td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
-<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td>
 </tr>
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004A01C</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000100</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40049014</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000101</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000001</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>24</td><td>ISF</td><td>0x00</td><td>Interrupt Status Flag</td>
 <tr><td>16 - 19</td><td>IRQC</td><td>0x00</td><td>Interrupt Configuration</td>
@@ -235,14 +235,14 @@ registers of the peripheral(s) configured by the component.
 <tr><td>4</td><td>PFE</td><td>0x00</td><td>Passive Filter Enable</td>
 <tr><td>2</td><td>SRE</td><td>0x00</td><td>Slew Rate Enable</td>
 <tr><td>1</td><td>PE</td><td>0x00</td><td>Pull Enable</td>
-<tr><td>0</td><td>PS</td><td>0x00</td><td>Pull Select</td>
+<tr><td>0</td><td>PS</td><td>0x01</td><td>Pull Select</td>
 </tr></table>
 */
 /*!
 \page BitIoLdd2_settings Component Settings
 \code
 **          Component name                                 : BitIoLdd2
-**          Pin for I/O                                    : ADC1_SE13/PTB7/FBa_AD22
+**          Pin for I/O                                    : PTA5/USB_CLKIN/FTM0_CH2/I2S0_TX_BCLK/JTAG_TRST_b
 **          Direction                                      : Input/Output
 **          Initialization                                 : 
 **            Init. direction                              : Output

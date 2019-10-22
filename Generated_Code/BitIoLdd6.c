@@ -7,7 +7,7 @@
 **     Version     : Component 01.033, Driver 01.03, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-19, 15:29, # CodeGen: 3
+**     Date/Time   : 2019-10-21, 14:19, # CodeGen: 28
 **     Abstract    :
 **         The HAL BitIO component provides a low level API for unified
 **         access to general purpose digital input/output pins across
@@ -17,7 +17,7 @@
 **         portable to various microprocessors.
 **     Settings    :
 **          Component name                                 : BitIoLdd6
-**          Pin for I/O                                    : ADC0_SE15/PTC1/LLWU_P6/SPI0_PCS3/UART1_RTS_b/FTM0_CH0/FBa_AD13/I2S0_TXD0/LPUART0_RTS_b
+**          Pin for I/O                                    : ADC0_SE13/PTB3/I2C0_SDA/UART0_CTS_b/FTM0_FLT0
 **          Direction                                      : Input/Output
 **          Initialization                                 : 
 **            Init. direction                              : Output
@@ -128,17 +128,17 @@ LDD_TDeviceData* BitIoLdd6_Init(LDD_TUserData *UserDataPtr)
   DeviceDataPrv = &DeviceDataPrv__DEFAULT_RTOS_ALLOC;
   DeviceDataPrv->UserDataPtr = UserDataPtr; /* Store the RTOS device structure */
   /* Enable device clock gate */
-  /* SIM_SCGC5: PORTC=1 */
-  SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;
+  /* SIM_SCGC5: PORTB=1 */
+  SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
   /* Configure pin as output */
-  /* GPIOC_PDDR: PDD|=2 */
-  GPIOC_PDDR |= GPIO_PDDR_PDD(0x02);
+  /* GPIOB_PDDR: PDD|=8 */
+  GPIOB_PDDR |= GPIO_PDDR_PDD(0x08);
   /* Set initialization value */
-  /* GPIOC_PDOR: PDO&=~2 */
-  GPIOC_PDOR &= (uint32_t)~(uint32_t)(GPIO_PDOR_PDO(0x02));
+  /* GPIOB_PDOR: PDO&=~8 */
+  GPIOB_PDOR &= (uint32_t)~(uint32_t)(GPIO_PDOR_PDO(0x08));
   /* Initialization of pin routing */
-  /* PORTC_PCR1: ISF=0,MUX=1 */
-  PORTC_PCR1 = (uint32_t)((PORTC_PCR1 & (uint32_t)~(uint32_t)(
+  /* PORTB_PCR3: ISF=0,MUX=1 */
+  PORTB_PCR3 = (uint32_t)((PORTB_PCR3 & (uint32_t)~(uint32_t)(
                 PORT_PCR_ISF_MASK |
                 PORT_PCR_MUX(0x06)
                )) | (uint32_t)(

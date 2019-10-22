@@ -22,14 +22,14 @@ by the component.
 <td class="regNotResetVal">0x00042582</td>
  <td>SIM_SCGC5 register, peripheral BitIoLdd1.</td></tr>
 <tr><td>0x400FF054</td><td>GPIOB_PDDR</td>
-<td class="regNotResetVal">0x00000080</td>
+<td class="regNotResetVal">0x00000004</td>
  <td>GPIOB_PDDR register, peripheral BitIoLdd1.</td></tr>
 <tr><td>0x400FF040</td><td>GPIOB_PDOR</td>
 <td class="regResetVal">0x00000000</td>
  <td>GPIOB_PDOR register, peripheral BitIoLdd1.</td></tr>
-<tr><td>0x4004A01C</td><td>PORTB_PCR7</td>
+<tr><td>0x4004A008</td><td>PORTB_PCR2</td>
 <td class="regNotResetVal">0x00000100</td>
- <td>PORTB_PCR7 register, peripheral BitIoLdd1.</td></tr>
+ <td>PORTB_PCR2 register, peripheral BitIoLdd1.</td></tr>
 </table>
 Color Denotes Reset Value
 <br/>
@@ -131,7 +131,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400FF054</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000080</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000004</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>PDD</td><td>0x00</td><td>Port Data Direction</td>
@@ -178,7 +178,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>PDO</td><td>0x00</td><td>Port Data Output</td>
 </tr></table>
-<div class="reghdr1">PORTB_PCR7</div>
+<div class="reghdr1">PORTB_PCR2</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -222,7 +222,7 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004A01C</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004A008</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000100</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
@@ -242,7 +242,7 @@ registers of the peripheral(s) configured by the component.
 \page BitIoLdd1_settings Component Settings
 \code
 **          Component name                                 : BitIoLdd1
-**          Pin for I/O                                    : ADC1_SE13/PTB7/FBa_AD22
+**          Pin for I/O                                    : ADC0_SE12/PTB2/I2C0_SCL/UART0_RTS_b/FTM0_FLT3
 **          Direction                                      : Input/Output
 **          Initialization                                 : 
 **            Init. direction                              : Output

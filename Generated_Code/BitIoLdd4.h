@@ -7,7 +7,7 @@
 **     Version     : Component 01.033, Driver 01.03, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-19, 15:29, # CodeGen: 3
+**     Date/Time   : 2019-10-21, 14:19, # CodeGen: 28
 **     Abstract    :
 **         The HAL BitIO component provides a low level API for unified
 **         access to general purpose digital input/output pins across
@@ -17,11 +17,11 @@
 **         portable to various microprocessors.
 **     Settings    :
 **          Component name                                 : BitIoLdd4
-**          Pin for I/O                                    : ADC0_SE12/PTB2/I2C0_SCL/UART0_RTS_b/FTM0_FLT3
+**          Pin for I/O                                    : ADC0_SE15/PTC1/LLWU_P6/SPI0_PCS3/UART1_RTS_b/FTM0_CH0/FBa_AD13/I2S0_TXD0/LPUART0_RTS_b
 **          Direction                                      : Output
 **          Initialization                                 : 
 **            Init. direction                              : Output
-**            Init. value                                  : 0
+**            Init. value                                  : 1
 **            Auto initialization                          : yes
 **          Safe mode                                      : yes
 **     Contents    :
@@ -101,7 +101,7 @@ extern "C" {
 
 
 /*! Peripheral base address of a device allocated by the component. This constant can be used directly in PDD macros. */
-#define BitIoLdd4_PRPH_BASE_ADDRESS  0x400FF040U
+#define BitIoLdd4_PRPH_BASE_ADDRESS  0x400FF080U
   
 /*! Device data structure pointer used when auto initialization property is enabled. This constant can be passed as a first parameter to all component's methods. */
 #define BitIoLdd4_DeviceData  ((LDD_TDeviceData *)PE_LDD_GetDeviceStructure(PE_LDD_COMPONENT_BitIoLdd4_ID))
@@ -114,9 +114,9 @@ extern "C" {
 #define BitIoLdd4_SetVal_METHOD_ENABLED /*!< SetVal method of the component BitIoLdd4 is enabled (generated) */
 
 /* Definition of implementation constants */
-#define BitIoLdd4_MODULE_BASE_ADDRESS PTB_BASE_PTR /*!< Name of macro used as the base address */
-#define BitIoLdd4_PORTCONTROL_BASE_ADDRESS PORTB_BASE_PTR /*!< Name of macro used as the base address */
-#define BitIoLdd4_PORT_MASK 0x04U      /*!< Mask of the allocated pin from the port */
+#define BitIoLdd4_MODULE_BASE_ADDRESS PTC_BASE_PTR /*!< Name of macro used as the base address */
+#define BitIoLdd4_PORTCONTROL_BASE_ADDRESS PORTC_BASE_PTR /*!< Name of macro used as the base address */
+#define BitIoLdd4_PORT_MASK 0x02U      /*!< Mask of the allocated pin from the port */
 
 
 
