@@ -85,7 +85,9 @@
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include <string.h>
 #include "utilities.h"
+#include "drawShapes.h"
 extern volatile char c;
+
 
 
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
@@ -110,7 +112,7 @@ int main(void)
 
 	for (;;) {
 
-		__asm ("wfi");
+//		__asm ("wfi");
 		// Manual Control
 		if (c == '1') {
 			GUI_title(x,y,z,p);

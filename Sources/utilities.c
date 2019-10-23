@@ -63,16 +63,29 @@
 #include <string.h>
 
 extern volatile char c;
-int delay(int delay_time) {
+
+void initialize(int x, int y, int z, int p){
+
+
+}
+
+int delay(int time_expect) {
+//	//first way to use clock
+//	for (int i = 0; i < 20000;i++){
+//
+//	}
+	//second way to use clock
 	word time;
 	FC321_Reset();
 	do {
 		FC321_GetTimeMS(&time);
-	} while (time < delay_time);
+	} while (time < time_expect);
 }
 void GUI_reset() {
 
 }
+
+
 void box(int x_step_pos, int y_step_pos, int length, int hight, char colour_f,
 		char colour_b) {
 	Term1_SetColor(colour_f, colour_b);
@@ -110,7 +123,7 @@ void GUI_title(int x, int y, int z, int p){
 	//Display current position
 
 	Term1_MoveTo(50,2);
-	Term1_SendStr("Current position");
+	Term1_SendStr("Current position:");
 	Term1_MoveTo(50,3);
 	Term1_SendStr("X: ");
 	Term1_MoveTo(55,3);
@@ -136,7 +149,7 @@ void RGB(char rgb){
 
 }
 
-
+//GUI for main interface
 void GUI_main() {
 
 	Term1_MoveTo(5, 10);
@@ -154,6 +167,7 @@ void GUI_main() {
 
 }
 
+//GUI for option 2
 void GUI_manual() {
 	//Display manual movement instructions
 	//box(48, 8, 46, 11, clWhite, clBlack);
@@ -180,49 +194,49 @@ void GUI_manual() {
 
 }
 
-//void clean_promotion(){
-//	Term1_MoveTo(50,8);
-//	Term1_EraseLine();
-//	Term1_MoveTo(50,9);
-//	Term1_EraseLine();
-//}
-//
-//void promotion_reduce(){
-//	Term1_MoveTo(50,7);
-//	Term1_SetColor(clRed,clBlack);
-//	Term1_SendStr("Step cannot go further");
-//	Term1_MoveTo(50,8);
-//	Term1_SendStr("Please reduce step");
-//	Term1_SetColor(clWhite,clBlack);
-//	c = 0;
-//}
-//void promotion_add(){
-//	Term1_MoveTo(50,7);
-//	Term1_SetColor(clRed,clBlack);
-//	Term1_SendStr("Step cannot go further");
-//	Term1_MoveTo(50,8);
-//	Term1_SendStr("Please reduce step");
-//	Term1_SetColor(clWhite,clBlack);
-//	c=0;
-//}
+//The three functions below are control the prompt
+//clean the promotion line
+void clean_prompt(){
+	Term1_MoveTo(50,7);
+	Term1_EraseLine();
+	Term1_MoveTo(50,8);
+	Term1_EraseLine();
+}
 
+//promotion for requiring to deduct steps
+void prompt_reduce(){
+	Term1_MoveTo(50,7);
+	Term1_SendStr("Step cannot go further");
+	Term1_MoveTo(50,8);
+	Term1_SendStr("Please reduce steps!");
+	Term1_SetColor(clWhite,clBlack);
+	c = 0;
+}
+
+//promotion for requiring to add steps
+void prompt_add(){
+	Term1_MoveTo(50,7);
+	Term1_SendStr("Step cannot go further");
+	Term1_MoveTo(50,8);
+	Term1_SendStr("Please add steps!");
+	Term1_SetColor(clWhite,clBlack);
+	c=0;
+}
+
+//option 1 manual function
 void manual_movement(int x,int y,int z,int p) {
-
 	do {
 		__asm ("wfi");
 		// Move drill bit X Y Z
 		if (c == 'd') {
 			//clean promotion lines
-			Term1_MoveTo(50,7);
-			Term1_EraseLine();
-			Term1_MoveTo(50,8);
-			Term1_EraseLine();
+			clean_prompt();
 			//correct minor steps
 			if(x<255){
 				//move x_step +
 				Dir_x_PutVal(1);
 				x_step_NegVal();
-				//delay(50);
+				delay(50);
 				x_step_NegVal();
 				// New x_step position in relation to set zero point
 				x++;
@@ -233,27 +247,18 @@ void manual_movement(int x,int y,int z,int p) {
 				c = 0;
 			}else{
 				x=255;
-				Term1_MoveTo(50,7);
 				Term1_SetColor(clRed,clBlack);
-				Term1_SendStr("Step cannot go further");
-				Term1_MoveTo(50,8);
-				Term1_SendStr("Please reduce step!");
-				Term1_SetColor(clWhite,clBlack);
-				c = 0;
+				prompt_reduce();
 			}
-
 		}
 		else if (c == 'a') {
-			Term1_MoveTo(50,7);
-			Term1_EraseLine();
-			Term1_MoveTo(50,8);
-			Term1_EraseLine();
+			clean_prompt();
 
 			if (x>0){
 				//move x_step -
 				Dir_x_PutVal(0);
 				x_step_NegVal();
-				//delay(50);
+				delay(50);
 				x_step_NegVal();
 				// New x_step position in relation to set zero point
 				x--;
@@ -264,28 +269,19 @@ void manual_movement(int x,int y,int z,int p) {
 				c = 0;
 			}else{
 				x=0;
-				Term1_MoveTo(50,7);
 				Term1_SetColor(clRed,clBlack);
-				Term1_SendStr("Step cannot go further");
-				Term1_MoveTo(50,8);
-				Term1_SendStr("Please add step!");
-				Term1_SetColor(clWhite,clBlack);
-				c = 0;
+				prompt_add();
 
 			}
 
 		}
 		else if (c == 'w') {
-			Term1_MoveTo(50,7);
-			Term1_EraseLine();
-			Term1_MoveTo(50,8);
-			Term1_EraseLine();
-
+			clean_prompt();
 			if (y<255){
 				// move y_step +
 				Dir_y_PutVal(1);
 				y_step_NegVal();
-				//delay(50);
+				delay(50);
 				y_step_NegVal();
 				// New y_step position in relation to set zero point
 				y++;
@@ -296,26 +292,17 @@ void manual_movement(int x,int y,int z,int p) {
 				c = 0;
 			}else{
 				y=255;
-				Term1_MoveTo(50,7);
-				Term1_SetColor(clBlue,clBlack);
-				Term1_SendStr("Step cannot go further");
-				Term1_MoveTo(50,8);
-				Term1_SendStr("Please reduce steps!");
-				Term1_SetColor(clWhite,clBlack);
-				c = 0;
+				Term1_SetColor(clBlue,clWhite);
+				prompt_reduce();
 			}
 		}
 		else if (c == 's') {
-			Term1_MoveTo(50,7);
-			Term1_EraseLine();
-			Term1_MoveTo(50,8);
-			Term1_EraseLine();
-
+			clean_prompt();
 			if(y>0){
 				//move y_step -
 				Dir_y_PutVal(0);
 				y_step_NegVal();
-				//delay(50);
+				delay(50);
 				y_step_NegVal();
 				// New y_step position in relation to set zero point
 				y--;
@@ -326,23 +313,13 @@ void manual_movement(int x,int y,int z,int p) {
 				c = 0;
 			}else{
 				y=0;
-				Term1_MoveTo(50,7);
-				Term1_SetColor(clBlue,clBlack);
-				Term1_SendStr("Step cannot go further");
-				Term1_MoveTo(50,8);
-				Term1_SendStr("Please add steps!");
-				Term1_SetColor(clWhite,clBlack);
-				c=0;
-
+				Term1_SetColor(clBlue,clWhite);
+				prompt_add();
 			}
 		}
 
 		else if (c == 'i') {
-			Term1_MoveTo(50,7);
-			Term1_EraseLine();
-			Term1_MoveTo(50,8);
-			Term1_EraseLine();
-
+			clean_prompt();
 			if (z<255){
 				//move z_step +
 				Dir_z_PutVal(1);
@@ -358,26 +335,18 @@ void manual_movement(int x,int y,int z,int p) {
 				c = 0;
 			}else{
 				z=255;
-				Term1_MoveTo(50,7);
 				Term1_SetColor(clMagenta,clBlack);
-				Term1_SendStr("Step cannot go further");
-				Term1_MoveTo(50,8);
-				Term1_SendStr("Please reduce steps!");
-				Term1_SetColor(clWhite,clBlack);
-				c = 0;
+				prompt_reduce();
 			}
 		}
 		else if (c == 'j') {
-			Term1_MoveTo(50,7);
-			Term1_EraseLine();
-			Term1_MoveTo(50,8);
-			Term1_EraseLine();
+			clean_prompt();
 
 			if(z > 0){
 				//move z_step -
 				Dir_z_PutVal(0);
 				z_step_NegVal();
-				//delay(50);
+				delay(50);
 				z_step_NegVal();
 				// New x_step position in relation to set zero point
 				z--;
@@ -388,22 +357,13 @@ void manual_movement(int x,int y,int z,int p) {
 				c = 0;
 			}else{
 				z = 0;
-				Term1_MoveTo(50,7);
 				Term1_SetColor(clMagenta,clBlack);
-				Term1_SendStr("Step cannot go further");
-				Term1_MoveTo(50,8);
-				Term1_SendStr("Please add step!");
-				Term1_SetColor(clWhite,clBlack);
-				c=0;
+				prompt_add();
 			}
 		}
 		//set PWM for drill bit speed
 		else if(c == '.'){
-			Term1_MoveTo(50,7);
-				Term1_EraseLine();
-				Term1_MoveTo(50,8);
-				Term1_EraseLine();
-
+			clean_prompt();
 			if (p < 255){
 				p += 15;
 				PWM1_SetRatio8(p);
@@ -415,15 +375,10 @@ void manual_movement(int x,int y,int z,int p) {
 			}
 			else{
 				p=0;
-
 			}
 		}
 		else if(c == ','){
-			Term1_MoveTo(50,8);
-				Term1_EraseLine();
-				Term1_MoveTo(50,9);
-				Term1_EraseLine();
-
+			clean_prompt();
 			if (p > 0){
 				p -= 15;
 				PWM1_SetRatio8(p);
@@ -443,3 +398,5 @@ void manual_movement(int x,int y,int z,int p) {
 	GUI_main(x,y,z,p);
 
 }
+
+//Draw pictures

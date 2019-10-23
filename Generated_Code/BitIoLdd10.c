@@ -7,7 +7,7 @@
 **     Version     : Component 01.033, Driver 01.03, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-19, 15:29, # CodeGen: 3
+**     Date/Time   : 2019-10-23, 11:46, # CodeGen: 33
 **     Abstract    :
 **         The HAL BitIO component provides a low level API for unified
 **         access to general purpose digital input/output pins across
@@ -17,11 +17,11 @@
 **         portable to various microprocessors.
 **     Settings    :
 **          Component name                                 : BitIoLdd10
-**          Pin for I/O                                    : ADC1_SE13/PTB7/FBa_AD22
+**          Pin for I/O                                    : PTD7/UART0_TX/FTM0_CH7/FTM0_FLT1/SPI1_SIN
 **          Direction                                      : Input/Output
 **          Initialization                                 : 
 **            Init. direction                              : Output
-**            Init. value                                  : 0
+**            Init. value                                  : 1
 **            Auto initialization                          : yes
 **          Safe mode                                      : yes
 **     Contents    :
@@ -127,17 +127,17 @@ LDD_TDeviceData* BitIoLdd10_Init(LDD_TUserData *UserDataPtr)
   DeviceDataPrv = &DeviceDataPrv__DEFAULT_RTOS_ALLOC;
   DeviceDataPrv->UserDataPtr = UserDataPtr; /* Store the RTOS device structure */
   /* Enable device clock gate */
-  /* SIM_SCGC5: PORTB=1 */
-  SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
+  /* SIM_SCGC5: PORTD=1 */
+  SIM_SCGC5 |= SIM_SCGC5_PORTD_MASK;
   /* Configure pin as output */
-  /* GPIOB_PDDR: PDD|=0x80 */
-  GPIOB_PDDR |= GPIO_PDDR_PDD(0x80);
+  /* GPIOD_PDDR: PDD|=0x80 */
+  GPIOD_PDDR |= GPIO_PDDR_PDD(0x80);
   /* Set initialization value */
-  /* GPIOB_PDOR: PDO&=~0x80 */
-  GPIOB_PDOR &= (uint32_t)~(uint32_t)(GPIO_PDOR_PDO(0x80));
+  /* GPIOD_PDOR: PDO|=0x80 */
+  GPIOD_PDOR |= GPIO_PDOR_PDO(0x80);
   /* Initialization of pin routing */
-  /* PORTB_PCR7: ISF=0,MUX=1 */
-  PORTB_PCR7 = (uint32_t)((PORTB_PCR7 & (uint32_t)~(uint32_t)(
+  /* PORTD_PCR7: ISF=0,MUX=1 */
+  PORTD_PCR7 = (uint32_t)((PORTD_PCR7 & (uint32_t)~(uint32_t)(
                 PORT_PCR_ISF_MASK |
                 PORT_PCR_MUX(0x06)
                )) | (uint32_t)(

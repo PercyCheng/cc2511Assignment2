@@ -592,7 +592,7 @@
         <Interrupt v="INT_FTM2" />
         <Interrupt_priority v="medium priority" />
       </boolgroup>
-      <Resolution v="0.095367 &amp;#181;s" />
+      <Resolution v="10 ms" />
       <Same_resolution_in_modes v="yes" />
       <Component_uses_entire_timer v="no" />
       <group name="Initialization">
@@ -614,9 +614,9 @@
               <Interrupt v="INT_FTM2" />
               <Interrupt_priority v="medium priority" />
             </boolgroup>
-            <Resolution v="0.095367 &amp;#181;s" />
+            <Resolution v="10 ms" />
             <SW_counter v="32-bit" />
-            <Maximum_time_of_event v="409.598146117632 sec" />
+            <Maximum_time_of_event v="42949836.80011744 sec" />
             <group name="Initialization">
               <Enabled_in_init__code v="yes" />
             </group>
@@ -681,7 +681,7 @@
         <group name="Channel 0">
           <enumgroup name="Mode" v="Compare">
             <Compare v="FTM2_C1V" />
-            <Offset v="0.095367 &amp;#181;s" />
+            <Offset v="10 ms" />
             <enumgroup name="Output on compare" v="Disconnect">
               <EmptySection_DummyValue />
             </enumgroup>
@@ -1244,17 +1244,17 @@
     <Enabled v="Y" />
     <Properties>
       <Component_name v="Mode_1" />
-      <Pin_for_I_O v="ADC1_SE13/PTB7/FBa_AD22" />
+      <Pin_for_I_O v="ADC0_SE7b/PTD6/LLWU_P15/SPI0_PCS3/UART0_RX/FTM0_CH6/FBa_AD0/FTM0_FLT0/SPI1_SOUT" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />
         <Template v="BitIO_LDD" />
         <Properties>
           <Component_name v="BitIoLdd9" />
-          <Pin_for_I_O v="ADC1_SE13/PTB7/FBa_AD22" />
+          <Pin_for_I_O v="ADC0_SE7b/PTD6/LLWU_P15/SPI0_PCS3/UART0_RX/FTM0_CH6/FBa_AD0/FTM0_FLT0/SPI1_SOUT" />
           <Direction v="Input/Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
-            <Init__value v="0" />
+            <Init__value v="1" />
             <Auto_initialization v="yes" />
           </group>
           <Safe_mode v="yes" />
@@ -1281,7 +1281,7 @@
       <Direction v="Input/Output" />
       <group name="Initialization">
         <Init__direction v="Output" />
-        <Init__value v="0" />
+        <Init__value v="1" />
       </group>
       <Safe_mode v="yes" />
       <Optimization_for v="speed" />
@@ -1307,17 +1307,17 @@
     <Enabled v="Y" />
     <Properties>
       <Component_name v="Mode_2" />
-      <Pin_for_I_O v="ADC1_SE13/PTB7/FBa_AD22" />
+      <Pin_for_I_O v="PTD7/UART0_TX/FTM0_CH7/FTM0_FLT1/SPI1_SIN" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />
         <Template v="BitIO_LDD" />
         <Properties>
           <Component_name v="BitIoLdd10" />
-          <Pin_for_I_O v="ADC1_SE13/PTB7/FBa_AD22" />
+          <Pin_for_I_O v="PTD7/UART0_TX/FTM0_CH7/FTM0_FLT1/SPI1_SIN" />
           <Direction v="Input/Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
-            <Init__value v="0" />
+            <Init__value v="1" />
             <Auto_initialization v="yes" />
           </group>
           <Safe_mode v="yes" />
@@ -1344,7 +1344,7 @@
       <Direction v="Input/Output" />
       <group name="Initialization">
         <Init__direction v="Output" />
-        <Init__value v="0" />
+        <Init__value v="1" />
       </group>
       <Safe_mode v="yes" />
       <Optimization_for v="speed" />
@@ -1370,17 +1370,17 @@
     <Enabled v="Y" />
     <Properties>
       <Component_name v="Mode_3" />
-      <Pin_for_I_O v="ADC1_SE13/PTB7/FBa_AD22" />
+      <Pin_for_I_O v="PTD4/LLWU_P14/SPI0_PCS1/UART0_RTS_b/FTM0_CH4/FBa_AD2/EWM_IN/SPI1_PCS0" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />
         <Template v="BitIO_LDD" />
         <Properties>
           <Component_name v="BitIoLdd11" />
-          <Pin_for_I_O v="ADC1_SE13/PTB7/FBa_AD22" />
+          <Pin_for_I_O v="PTD4/LLWU_P14/SPI0_PCS1/UART0_RTS_b/FTM0_CH4/FBa_AD2/EWM_IN/SPI1_PCS0" />
           <Direction v="Input/Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
-            <Init__value v="0" />
+            <Init__value v="1" />
             <Auto_initialization v="yes" />
           </group>
           <Safe_mode v="yes" />
@@ -1407,7 +1407,7 @@
       <Direction v="Input/Output" />
       <group name="Initialization">
         <Init__direction v="Output" />
-        <Init__value v="0" />
+        <Init__value v="1" />
       </group>
       <Safe_mode v="yes" />
       <Optimization_for v="speed" />
