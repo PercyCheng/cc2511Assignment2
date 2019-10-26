@@ -28,10 +28,10 @@ Generated_Code/Inhr1.o: ../Generated_Code/Inhr1.c \
  C:/Labs/Assignment2-Percy/Static_Code/PDD/GPIO_PDD.h \
  C:/Labs/Assignment2-Percy/Static_Code/PDD/PDD_Types.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd1.h \
- C:/Labs/Assignment2-Percy/Generated_Code/y_step.h \
- C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd2.h \
- C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd2.h \
  C:/Labs/Assignment2-Percy/Generated_Code/z_step.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd2.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd2.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/y_step.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd3.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd3.h \
  C:/Labs/Assignment2-Percy/Generated_Code/FC321.h \
@@ -54,10 +54,10 @@ Generated_Code/Inhr1.o: ../Generated_Code/Inhr1.c \
  C:/Labs/Assignment2-Percy/Generated_Code/Dir_x.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd6.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd6.h \
- C:/Labs/Assignment2-Percy/Generated_Code/Dir_y.h \
- C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd7.h \
- C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd7.h \
  C:/Labs/Assignment2-Percy/Generated_Code/Dir_z.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd7.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd7.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/Dir_y.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd8.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd8.h \
  C:/Labs/Assignment2-Percy/Generated_Code/Mode_1.h \
@@ -78,16 +78,16 @@ Generated_Code/Inhr1.o: ../Generated_Code/Inhr1.c \
  C:/Labs/Assignment2-Percy/Generated_Code/Blue_LED.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd17.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd17.h \
- C:/Labs/Assignment2-Percy/Generated_Code/Reset_z.h \
- C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd12.h \
- C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd12.h \
- C:/Labs/Assignment2-Percy/Generated_Code/Sleep_z.h \
- C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd13.h \
- C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd13.h \
  C:/Labs/Assignment2-Percy/Generated_Code/Reset_y.h \
- C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd14.h \
- C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd14.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd12.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd12.h \
  C:/Labs/Assignment2-Percy/Generated_Code/Sleep_y.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd13.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd13.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/Reset_z.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd14.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd14.h \
+ C:/Labs/Assignment2-Percy/Generated_Code/Sleep_z.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd18.h \
  C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd18.h
 
@@ -155,13 +155,13 @@ C:/Labs/Assignment2-Percy/Static_Code/PDD/PDD_Types.h:
 
 C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd1.h:
 
-C:/Labs/Assignment2-Percy/Generated_Code/y_step.h:
-
-C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd2.h:
-
-C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd2.h:
-
 C:/Labs/Assignment2-Percy/Generated_Code/z_step.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd2.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd2.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/y_step.h:
 
 C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd3.h:
 
@@ -207,13 +207,13 @@ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd6.h:
 
 C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd6.h:
 
-C:/Labs/Assignment2-Percy/Generated_Code/Dir_y.h:
-
-C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd7.h:
-
-C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd7.h:
-
 C:/Labs/Assignment2-Percy/Generated_Code/Dir_z.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd7.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd7.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/Dir_y.h:
 
 C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd8.h:
 
@@ -255,25 +255,25 @@ C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd17.h:
 
 C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd17.h:
 
-C:/Labs/Assignment2-Percy/Generated_Code/Reset_z.h:
-
-C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd12.h:
-
-C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd12.h:
-
-C:/Labs/Assignment2-Percy/Generated_Code/Sleep_z.h:
-
-C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd13.h:
-
-C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd13.h:
-
 C:/Labs/Assignment2-Percy/Generated_Code/Reset_y.h:
 
-C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd14.h:
+C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd12.h:
 
-C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd14.h:
+C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd12.h:
 
 C:/Labs/Assignment2-Percy/Generated_Code/Sleep_y.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd13.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd13.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/Reset_z.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd14.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd14.h:
+
+C:/Labs/Assignment2-Percy/Generated_Code/Sleep_z.h:
 
 C:/Labs/Assignment2-Percy/Generated_Code/BitIoLdd18.h:
 

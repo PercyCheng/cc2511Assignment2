@@ -146,20 +146,18 @@ void drawRectangle(int length, int height){
 }
 
 //monitor coordinate
-void moveSpindleTo(int x, int y, int x_before, int y_before){
+void moveSpindleTo(int x, int y, int x_before, int y_before, int delay_time){
 	//update x position
 	//eg. dot (15,5) move to (17,5)
 	if (x > x_before){
 		for (i = 0; i <= x - x_before; i++){
 			Dir_x_PutVal(1);
-			x_step_NegVal();
-			x_step_NegVal();
+			driveMotorX(delay_time);
 		}
 	//eg. dot (17,5) move to (15,5)
 	}else if(x < x_before){
 		Dir_x_PutVal(0);
-		x_step_NegVal();
-		x_step_NegVal();
+		driveMotorX(delay_time);
 	}else if(x = x_before){
 
 	}
@@ -169,14 +167,12 @@ void moveSpindleTo(int x, int y, int x_before, int y_before){
 	if (y > y_before){
 		for (i = 0; i <= y - y_before; i++){
 			Dir_y_PutVal(1);
-			y_step_NegVal();
-			y_step_NegVal();
+			driveMotorY(delay_time);
 		}
 	//eg. dot (9,7) move to (9,5)
 	}else if(y < y_before){
 		Dir_y_PutVal(0);
-		y_step_NegVal();
-		y_step_NegVal();
+		driveMotorY(delay_time);
 	}else if(y = y_before){
 	}
 
@@ -187,23 +183,70 @@ void moveSpindleTo(int x, int y, int x_before, int y_before){
 void drawCircle(int radius){
 	int x, y, r2;
 	int x_before, y_before;
-	//move spindle on circle(-radius, 0)
-	for (i = 0; i <= radius; i++){
-		Dir_y_PutVal(0);
-		y_step_NegVal();
-		y_step_NegVal();
-	}
-
+	//initialize parameter
+	x = -radius;
+	x_before = -radius-1;
+	y_before = 0;
 	r2 = radius * radius;
 
+	//draw semicircle
 	for (x = -radius; x <=  radius; x++) {
-		x_before = -radius - 1;
 		//use math library
 		y = sqrt(r2 - x*x);
-		moveSpindleTo(x, y, x_before, y_before);
+		//TODO move y forward
+		//TODO move x forward
+		moveSpindleTo(x, y, x_before, y_before,2000);
 		x_before = x;
 		y_before = y;
+		//draw progress bar
+		Term1_SetColor(clCyan,clMagenta);
+		Term1_MoveTo(18+x,10);
+		Term1_SendStr("  ");
+		Term1_MoveTo(19+x,10);
+		Term1_SendNum(50*(x+radius)/(2*radius));
+		Term1_MoveTo(22+x,10);
+		Term1_SendStr(" %");
+//		Term1_MoveTo(10,20+x);
+//		Term1_SendNum(x);
+//		Term1_SendStr("\r\n");
+//		Term1_MoveTo(13,20+x);
+//		Term1_SendNum(y);
+//		Term1_SendStr(" ");
+//		Term1_SendStr("\r\n");
 	}
+//	Term1_MoveTo(30,20);
+//	Term1_SendNum(x);
+	x -= 1;
+
+	for (x = radius; x >= -radius; x--){
+		y = -sqrt(r2 - x * x);
+		//TODO move x backward
+		//TODO move y down and up
+		moveSpindleTo(x, y, x_before, y_before,2000);
+		x_before = x;
+		y_before = y;
+		//draw progress bar
+		Term1_SetColor(clCyan,clMagenta);
+		Term1_MoveTo(18+radius-x,10);
+		Term1_SendStr("  ");
+		Term1_MoveTo(19+radius-x,10);
+		Term1_SendNum(100*(radius-x)/(2*radius));
+		Term1_MoveTo(22+radius-x,10);
+		Term1_SendStr(" ");
+		Term1_SendStr("%");
+//		//print x,y coordinate
+//		Term1_MoveTo(16,20+x);
+//		Term1_SendNum(x);
+//		Term1_SendStr("\r\n");
+//		Term1_MoveTo(19,20+x);
+//		Term1_SendNum(y);
+//		Term1_SendStr(" ");
+//		Term1_SendStr("\r\n");
+		}
+	Term1_SetColor(clWhite,clBlack);
+	Term1_SendStr("      Well Done! Circle has been drawn!");
+//	Term1_MoveTo(30,21);
+//	Term1_SendNum(x);
 }
 
 

@@ -7,7 +7,7 @@
 **     Version     : Component 01.007, Driver 01.01, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-23, 14:26, # CodeGen: 34
+**     Date/Time   : 2019-10-26, 12:07, # CodeGen: 35
 **     Abstract    :
 **          This component "RealTime_LDD" implements a free running counter
 **          for time measurement.
@@ -21,9 +21,9 @@
 **          Interrupt service/event                        : Enabled
 **            Interrupt                                    : INT_FTM2
 **            Interrupt priority                           : medium priority
-**          Resolution                                     : 10 ms
+**          Resolution                                     : 1 ms
 **          SW counter                                     : 32-bit
-**          Maximum time of event                          : 42949836.80011744 sec
+**          Maximum time of event                          : 4295065.599211471 sec
 **          Initialization                                 : 
 **            Enabled in init. code                        : yes
 **            Auto initialization                          : yes
@@ -148,7 +148,7 @@ LDD_TDeviceData* RealTimeLdd1_Init(LDD_TUserData *UserDataPtr)
   DeviceDataPrv->TimerTicks = 0U;      /* Counter of timer ticks */
   DeviceDataPrv->Overflow = FALSE;     /* Counter overflow flag */
   DeviceDataPrv->EnUser = TRUE;        /* Set the flag "device enabled" */
-  DeviceDataPrv->CmpVal = 0xCCCDU;     /* Initial value periodically addded to compare register */
+  DeviceDataPrv->CmpVal = 0x51ECU;     /* Initial value periodically addded to compare register */
   /* Registration of the device structure */
   PE_LDD_RegisterDeviceStructure(PE_LDD_COMPONENT_RealTimeLdd1_ID,DeviceDataPrv);
   DeviceDataPrv->LinkedDeviceDataPtr = TU1_Init((LDD_TUserData *)NULL);
@@ -233,7 +233,7 @@ LDD_TError RealTimeLdd1_GetTimeUS(LDD_TDeviceData *DeviceDataPtr, uint16_t *Time
   if (CopyOverflow) {                  /* Testing counter overflow */
     return ERR_OVERFLOW;               /* If yes then error */
   }
-  rtval = CopyTicks * 10000.038147F;   /* Multiply ticks and clock configuration 0 coefficient */
+  rtval = CopyTicks * 1000.022888F;    /* Multiply ticks and clock configuration 0 coefficient */
   if (rtval > 0xFFFFUL) {              /* Is the result greater than 65535 ? */
     return ERR_MATH;                   /* If yes then error */
   }
@@ -282,7 +282,7 @@ LDD_TError RealTimeLdd1_GetTimeMS(LDD_TDeviceData *DeviceDataPtr, uint16_t *Time
   if (CopyOverflow) {                  /* Testing counter overflow */
     return ERR_OVERFLOW;               /* If yes then error */
   }
-  rtval = CopyTicks * 10.000038147F;   /* Multiply ticks and clock configuration 0 coefficient */
+  rtval = CopyTicks * 1.000022888F;    /* Multiply ticks and clock configuration 0 coefficient */
   if (rtval > 0xFFFFUL) {              /* Is the result greater than 65535 ? */
     return ERR_MATH;                   /* If yes then error */
   }

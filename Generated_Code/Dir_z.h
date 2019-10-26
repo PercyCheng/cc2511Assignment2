@@ -7,7 +7,7 @@
 **     Version     : Component 02.086, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-21, 14:19, # CodeGen: 28
+**     Date/Time   : 2019-10-26, 12:07, # CodeGen: 35
 **     Abstract    :
 **         This component "BitIO" implements an one-bit input/output.
 **         It uses one bit/pin of a port.
@@ -87,7 +87,7 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* Include inherited beans */
-#include "BitIoLdd8.h"
+#include "BitIoLdd7.h"
 
 #include "Cpu.h"
 
@@ -110,7 +110,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Dir_z_SetDir(Dir) (BitIoLdd8_SetDir(BitIoLdd8_DeviceData, (Dir)))
+#define Dir_z_SetDir(Dir) (BitIoLdd7_SetDir(BitIoLdd7_DeviceData, (Dir)))
 
 /*
 ** ===================================================================
@@ -128,7 +128,7 @@ extern "C" {
 
 ** ===================================================================
 */
-#define Dir_z_GetVal() (BitIoLdd8_GetVal(BitIoLdd8_DeviceData))
+#define Dir_z_GetVal() (BitIoLdd7_GetVal(BitIoLdd7_DeviceData))
 
 /*
 ** ===================================================================
@@ -150,7 +150,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Dir_z_PutVal(Val) (BitIoLdd8_PutVal(BitIoLdd8_DeviceData, (Val)))
+#define Dir_z_PutVal(Val) (BitIoLdd7_PutVal(BitIoLdd7_DeviceData, (Val)))
 
 /*
 ** ===================================================================
@@ -168,7 +168,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Dir_z_ClrVal() (BitIoLdd8_ClrVal(BitIoLdd8_DeviceData))
+#define Dir_z_ClrVal() (BitIoLdd7_ClrVal(BitIoLdd7_DeviceData))
 
 /*
 ** ===================================================================
@@ -186,7 +186,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Dir_z_SetVal() (BitIoLdd8_SetVal(BitIoLdd8_DeviceData))
+#define Dir_z_SetVal() (BitIoLdd7_SetVal(BitIoLdd7_DeviceData))
 
 /*
 ** ===================================================================
@@ -204,7 +204,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Dir_z_NegVal() (BitIoLdd8_NegVal(BitIoLdd8_DeviceData))
+#define Dir_z_NegVal() (BitIoLdd7_NegVal(BitIoLdd7_DeviceData))
 
 /* END Dir_z. */
 

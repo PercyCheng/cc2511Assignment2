@@ -35,9 +35,9 @@
 #include "ASerialLdd1.h"
 #include "x_step.h"
 #include "BitIoLdd1.h"
-#include "y_step.h"
-#include "BitIoLdd2.h"
 #include "z_step.h"
+#include "BitIoLdd2.h"
+#include "y_step.h"
 #include "BitIoLdd3.h"
 #include "FC321.h"
 #include "RealTimeLdd1.h"
@@ -51,9 +51,9 @@
 #include "BitIoLdd5.h"
 #include "Dir_x.h"
 #include "BitIoLdd6.h"
-#include "Dir_y.h"
-#include "BitIoLdd7.h"
 #include "Dir_z.h"
+#include "BitIoLdd7.h"
+#include "Dir_y.h"
 #include "BitIoLdd8.h"
 #include "Mode_1.h"
 #include "BitIoLdd9.h"
@@ -67,13 +67,13 @@
 #include "BitIoLdd16.h"
 #include "Blue_LED.h"
 #include "BitIoLdd17.h"
-#include "Reset_z.h"
-#include "BitIoLdd12.h"
-#include "Sleep_z.h"
-#include "BitIoLdd13.h"
 #include "Reset_y.h"
-#include "BitIoLdd14.h"
+#include "BitIoLdd12.h"
 #include "Sleep_y.h"
+#include "BitIoLdd13.h"
+#include "Reset_z.h"
+#include "BitIoLdd14.h"
+#include "Sleep_z.h"
 #include "BitIoLdd18.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
@@ -95,23 +95,22 @@ int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
 {
 	/* Write your local variable definition here */
-
+	int x = 0;
+	int y = 0;
+	int z = 0;
+	int p = 0;
 	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
 	PE_low_level_init();
 	/*** End of Processor Expert internal initialization.                    ***/
 
 	/* Write your code here */
-	int x = 0;
-	int y = 0;
-	int z = 0;
-	int p = 0;
 
-	RGB('r');
+
+//	RGB('r');
 	GUI_title(x,y,z,p);
 	GUI_main();
 
 	for (;;) {
-
 //		__asm ("wfi");
 		// Manual Control
 		if (c == '1') {
@@ -123,7 +122,9 @@ int main(void)
 		else if (c == '2') {
 			GUI_title(x,y,z,p);
 			Term1_MoveTo(5, 9);
-			Term1_SendStr("Not available now! Choose 1, 2 or 3");
+//			Term1_SendStr("Not available now! Choose 1, 2 or 3");
+			drawCircle(100);
+			manual_movement(x,y,z,p);
 			c = 0;
 
 		}

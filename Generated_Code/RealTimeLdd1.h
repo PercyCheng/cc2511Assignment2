@@ -7,7 +7,7 @@
 **     Version     : Component 01.007, Driver 01.01, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-23, 14:26, # CodeGen: 34
+**     Date/Time   : 2019-10-26, 12:07, # CodeGen: 35
 **     Abstract    :
 **          This component "RealTime_LDD" implements a free running counter
 **          for time measurement.
@@ -21,9 +21,9 @@
 **          Interrupt service/event                        : Enabled
 **            Interrupt                                    : INT_FTM2
 **            Interrupt priority                           : medium priority
-**          Resolution                                     : 10 ms
+**          Resolution                                     : 1 ms
 **          SW counter                                     : 32-bit
-**          Maximum time of event                          : 42949836.80011744 sec
+**          Maximum time of event                          : 4295065.599211471 sec
 **          Initialization                                 : 
 **            Enabled in init. code                        : yes
 **            Auto initialization                          : yes

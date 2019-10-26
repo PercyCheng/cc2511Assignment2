@@ -7,7 +7,7 @@
 **     Version     : Component 01.033, Driver 01.03, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-21, 14:19, # CodeGen: 28
+**     Date/Time   : 2019-10-26, 11:47, # CodeGen: 0
 **     Abstract    :
 **         The HAL BitIO component provides a low level API for unified
 **         access to general purpose digital input/output pins across
@@ -17,7 +17,7 @@
 **         portable to various microprocessors.
 **     Settings    :
 **          Component name                                 : BitIoLdd3
-**          Pin for I/O                                    : ADC1_SE5b/CMP0_IN3/PTC9/FTM3_CH5/I2S0_RX_BCLK/FBa_AD6/FTM2_FLT0
+**          Pin for I/O                                    : PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/FBa_AD10/CMP0_OUT/FTM0_CH2
 **          Direction                                      : Input/Output
 **          Initialization                                 : 
 **            Init. direction                              : Output
@@ -131,14 +131,14 @@ LDD_TDeviceData* BitIoLdd3_Init(LDD_TUserData *UserDataPtr)
   /* SIM_SCGC5: PORTC=1 */
   SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;
   /* Configure pin as output */
-  /* GPIOC_PDDR: PDD|=0x0200 */
-  GPIOC_PDDR |= GPIO_PDDR_PDD(0x0200);
+  /* GPIOC_PDDR: PDD|=0x20 */
+  GPIOC_PDDR |= GPIO_PDDR_PDD(0x20);
   /* Set initialization value */
-  /* GPIOC_PDOR: PDO&=~0x0200 */
-  GPIOC_PDOR &= (uint32_t)~(uint32_t)(GPIO_PDOR_PDO(0x0200));
+  /* GPIOC_PDOR: PDO&=~0x20 */
+  GPIOC_PDOR &= (uint32_t)~(uint32_t)(GPIO_PDOR_PDO(0x20));
   /* Initialization of pin routing */
-  /* PORTC_PCR9: ISF=0,MUX=1 */
-  PORTC_PCR9 = (uint32_t)((PORTC_PCR9 & (uint32_t)~(uint32_t)(
+  /* PORTC_PCR5: ISF=0,MUX=1 */
+  PORTC_PCR5 = (uint32_t)((PORTC_PCR5 & (uint32_t)~(uint32_t)(
                 PORT_PCR_ISF_MASK |
                 PORT_PCR_MUX(0x06)
                )) | (uint32_t)(

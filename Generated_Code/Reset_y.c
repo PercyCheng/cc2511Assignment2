@@ -7,7 +7,7 @@
 **     Version     : Component 02.086, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-21, 14:57, # CodeGen: 32
+**     Date/Time   : 2019-10-26, 12:07, # CodeGen: 35
 **     Abstract    :
 **         This component "BitIO" implements an one-bit input/output.
 **         It uses one bit/pin of a port.
@@ -16,7 +16,7 @@
 **         (if supported by target language and compiler).
 **     Settings    :
 **          Component name                                 : Reset_y
-**          Pin for I/O                                    : PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/FBa_AD10/CMP0_OUT/FTM0_CH2
+**          Pin for I/O                                    : ADC1_SE4b/CMP0_IN2/PTC8/FTM3_CH4/I2S0_MCLK/FBa_AD7
 **          BitIO_LDD                                      : BitIO_LDD
 **          Direction                                      : Output
 **          Initialization                                 : 

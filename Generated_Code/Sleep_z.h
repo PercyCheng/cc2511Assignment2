@@ -7,7 +7,7 @@
 **     Version     : Component 02.086, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-21, 14:57, # CodeGen: 32
+**     Date/Time   : 2019-10-26, 12:07, # CodeGen: 35
 **     Abstract    :
 **         This component "BitIO" implements an one-bit input/output.
 **         It uses one bit/pin of a port.
@@ -16,12 +16,12 @@
 **         (if supported by target language and compiler).
 **     Settings    :
 **          Component name                                 : Sleep_z
-**          Pin for I/O                                    : PTA12/FTM1_CH0/I2S0_TXD0/FTM1_QD_PHA
+**          Pin for I/O                                    : ADC1_SE6b/PTC10/I2C1_SCL/FTM3_CH6/I2S0_RX_FS/FBa_AD5
 **          BitIO_LDD                                      : BitIO_LDD
 **          Direction                                      : Output
 **          Initialization                                 : 
 **            Init. direction                              : Output
-**            Init. value                                  : 0
+**            Init. value                                  : 1
 **          Safe mode                                      : yes
 **          Optimization for                               : speed
 **     Contents    :
@@ -87,7 +87,7 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* Include inherited beans */
-#include "BitIoLdd13.h"
+#include "BitIoLdd18.h"
 
 #include "Cpu.h"
 
@@ -115,7 +115,7 @@ extern "C" {
 
 ** ===================================================================
 */
-#define Sleep_z_GetVal() (BitIoLdd13_GetVal(BitIoLdd13_DeviceData))
+#define Sleep_z_GetVal() (BitIoLdd18_GetVal(BitIoLdd18_DeviceData))
 
 /*
 ** ===================================================================
@@ -130,7 +130,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Sleep_z_PutVal(Val) (BitIoLdd13_PutVal(BitIoLdd13_DeviceData, (Val)))
+#define Sleep_z_PutVal(Val) (BitIoLdd18_PutVal(BitIoLdd18_DeviceData, (Val)))
 
 /*
 ** ===================================================================
@@ -141,7 +141,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Sleep_z_ClrVal() (BitIoLdd13_ClrVal(BitIoLdd13_DeviceData))
+#define Sleep_z_ClrVal() (BitIoLdd18_ClrVal(BitIoLdd18_DeviceData))
 
 /*
 ** ===================================================================
@@ -152,7 +152,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Sleep_z_SetVal() (BitIoLdd13_SetVal(BitIoLdd13_DeviceData))
+#define Sleep_z_SetVal() (BitIoLdd18_SetVal(BitIoLdd18_DeviceData))
 
 /* END Sleep_z. */
 

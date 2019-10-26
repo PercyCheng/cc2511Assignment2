@@ -518,7 +518,7 @@
 			</tr>
 			<tr>
 				<td>K7</td><td>PTA5/USB_CLKIN/FTM0_CH2/I2S0_TX_BCLK/JTAG_TRST_b</td><td><small><i>same</i></small></td>
-				<td bgcolor='#F7DCFF'>PTA</td><td bgcolor='#F7DCFF'>port5</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Output</td>
+				<td></td><td></td><td></td><td></td>
 			</tr>
 			<tr>
 				<td>K8</td><td>PTA12/FTM1_CH0/I2S0_TXD0/FTM1_QD_PHA</td><td><small><i>same</i></small></td>
@@ -575,10 +575,9 @@
 				<td bgcolor='#14AFFF'>RTC</td><td bgcolor='#14AFFF'>rtc_wakeup</td><td bgcolor='#14AFFF'>alt0</td><td bgcolor='#14AFFF'>Input/Output</td>
 			</tr>
 			<tr>
-				<td rowspan='2'>L8</td><td rowspan='2'>PTA13/LLWU_P4/FTM1_CH1/I2S0_TX_FS/FTM1_QD_PHB</td><td rowspan='2'><small><i>same</i></small></td>
-				<td bgcolor='#F7DCFF'>PTA</td><td bgcolor='#F7DCFF'>port13</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Output</td>
+				<td>L8</td><td>PTA13/LLWU_P4/FTM1_CH1/I2S0_TX_FS/FTM1_QD_PHB</td><td><small><i>same</i></small></td>
+				<td></td><td></td><td></td><td></td>
 			</tr>
-			<tr bgcolor='#CCB6A0'><td>LLWU</td><td>llwu_wakeup4</td><td>alt1</td><td>Input</td></tr>
 			<tr>
 				<td>L9</td><td>PTA15/SPI0_SCK/UART0_RX/I2S0_RXD0</td><td><small><i>same</i></small></td>
 				<td></td><td></td><td></td><td></td>
@@ -2583,7 +2582,7 @@
 			</tr>
 			<tr>
 				<td>K7</td><td>PTA5/USB_CLKIN/FTM0_CH2/I2S0_TX_BCLK/JTAG_TRST_b</td><td><small><i>same</i></small></td>
-				<td bgcolor='#F7DCFF'>PTA</td><td bgcolor='#F7DCFF'>port5</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Output</td>
+				<td></td><td></td><td></td><td></td>
 			</tr>
 			<tr>
 				<td>K8</td><td>PTA12/FTM1_CH0/I2S0_TXD0/FTM1_QD_PHA</td><td><small><i>same</i></small></td>
@@ -2640,10 +2639,9 @@
 				<td bgcolor='#14AFFF'>RTC</td><td bgcolor='#14AFFF'>rtc_wakeup</td><td bgcolor='#14AFFF'>alt0</td><td bgcolor='#14AFFF'>Input/Output</td>
 			</tr>
 			<tr>
-				<td rowspan='2'>L8</td><td rowspan='2'>PTA13/LLWU_P4/FTM1_CH1/I2S0_TX_FS/FTM1_QD_PHB</td><td rowspan='2'><small><i>same</i></small></td>
-				<td bgcolor='#F7DCFF'>PTA</td><td bgcolor='#F7DCFF'>port13</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Output</td>
+				<td>L8</td><td>PTA13/LLWU_P4/FTM1_CH1/I2S0_TX_FS/FTM1_QD_PHB</td><td><small><i>same</i></small></td>
+				<td></td><td></td><td></td><td></td>
 			</tr>
-			<tr bgcolor='#CCB6A0'><td>LLWU</td><td>llwu_wakeup4</td><td>alt1</td><td>Input</td></tr>
 			<tr>
 				<td>L9</td><td>PTA15/SPI0_SCK/UART0_RX/I2S0_RXD0</td><td><small><i>same</i></small></td>
 				<td></td><td></td><td></td><td></td>

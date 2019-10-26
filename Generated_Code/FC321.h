@@ -7,7 +7,7 @@
 **     Version     : Component 02.070, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-23, 14:26, # CodeGen: 34
+**     Date/Time   : 2019-10-26, 12:07, # CodeGen: 35
 **     Abstract    :
 **         This device "FreeCntr32" implements 32-bit Free Running Counter
 **     Settings    :
@@ -17,7 +17,7 @@
 **          Interrupt service/event                        : Enabled
 **            Interrupt                                    : INT_FTM2
 **            Interrupt priority                           : medium priority
-**          Resolution                                     : 10 ms
+**          Resolution                                     : 1 ms
 **          Same resolution in modes                       : yes
 **          Component uses entire timer                    : no
 **          Initialization                                 : 

@@ -21,7 +21,7 @@ by the component.
 <td class="regResetVal">0x00000004</td>
  <td>FTM2_MODE register, peripheral TU1.</td></tr>
 <tr><td>0x4003A000</td><td>FTM2_SC</td>
-<td class="regNotResetVal">0x0000000A</td>
+<td class="regNotResetVal">0x00000008</td>
  <td>FTM2_SC register, peripheral TU1.</td></tr>
 <tr><td>0x4003A04C</td><td>FTM2_CNTIN</td>
 <td class="regResetVal">0x00000000</td>
@@ -39,7 +39,7 @@ by the component.
 <td class="regNotResetVal">0x0000FFFF</td>
  <td>FTM2_MOD register, peripheral TU1.</td></tr>
 <tr><td>0x4003A018</td><td>FTM2_C1V</td>
-<td class="regNotResetVal">0x0000CCCD</td>
+<td class="regNotResetVal">0x000051EC</td>
  <td>FTM2_C1V register, peripheral TU1.</td></tr>
 <tr><td>0xE000E42C</td><td>NVICIP44</td>
 <td class="regNotResetVal">0x00000070</td>
@@ -228,7 +228,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4003A000</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000000A</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000008</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>7</td><td>TOF</td><td>0x00</td><td>Timer Overflow Flag</td>
@@ -540,10 +540,10 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4003A018</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000CCCD</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x000051EC</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
-<tr><td>0 - 15</td><td>VAL</td><td>0x8000</td><td>Channel Value</td>
+<tr><td>0 - 15</td><td>VAL</td><td>0x00</td><td>Channel Value</td>
 </tr></table>
 <div class="reghdr1">NVICIP44</div>
 <div class="regdiag">
@@ -630,7 +630,7 @@ registers of the peripheral(s) configured by the component.
 **            Channel 0                                    : 
 **              Mode                                       : Compare
 **                Compare                                  : FTM2_C1V
-**                Offset                                   : 10 ms
+**                Offset                                   : 1 ms
 **                Output on compare                        : Disconnect
 **                Interrupt                                : Enabled
 **                  Interrupt                              : INT_FTM2

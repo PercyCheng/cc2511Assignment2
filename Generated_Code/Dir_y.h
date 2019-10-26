@@ -7,7 +7,7 @@
 **     Version     : Component 02.086, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-21, 14:19, # CodeGen: 28
+**     Date/Time   : 2019-10-26, 12:07, # CodeGen: 35
 **     Abstract    :
 **         This component "BitIO" implements an one-bit input/output.
 **         It uses one bit/pin of a port.
@@ -15,7 +15,7 @@
 **         (if supported by target language and compiler).
 **     Settings    :
 **          Component name                                 : Dir_y
-**          Pin for I/O                                    : PTA13/LLWU_P4/FTM1_CH1/I2S0_TX_FS/FTM1_QD_PHB
+**          Pin for I/O                                    : CMP0_IN1/PTC7/SPI0_SIN/USB_SOF_OUT/I2S0_RX_FS/FBa_AD8
 **          BitIO_LDD                                      : BitIO_LDD
 **          Direction                                      : Input/Output
 **          Initialization                                 : 
@@ -87,7 +87,7 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* Include inherited beans */
-#include "BitIoLdd7.h"
+#include "BitIoLdd8.h"
 
 #include "Cpu.h"
 
@@ -110,7 +110,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Dir_y_SetDir(Dir) (BitIoLdd7_SetDir(BitIoLdd7_DeviceData, (Dir)))
+#define Dir_y_SetDir(Dir) (BitIoLdd8_SetDir(BitIoLdd8_DeviceData, (Dir)))
 
 /*
 ** ===================================================================
@@ -128,7 +128,7 @@ extern "C" {
 
 ** ===================================================================
 */
-#define Dir_y_GetVal() (BitIoLdd7_GetVal(BitIoLdd7_DeviceData))
+#define Dir_y_GetVal() (BitIoLdd8_GetVal(BitIoLdd8_DeviceData))
 
 /*
 ** ===================================================================
@@ -150,7 +150,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Dir_y_PutVal(Val) (BitIoLdd7_PutVal(BitIoLdd7_DeviceData, (Val)))
+#define Dir_y_PutVal(Val) (BitIoLdd8_PutVal(BitIoLdd8_DeviceData, (Val)))
 
 /*
 ** ===================================================================
@@ -168,7 +168,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Dir_y_ClrVal() (BitIoLdd7_ClrVal(BitIoLdd7_DeviceData))
+#define Dir_y_ClrVal() (BitIoLdd8_ClrVal(BitIoLdd8_DeviceData))
 
 /*
 ** ===================================================================
@@ -186,7 +186,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Dir_y_SetVal() (BitIoLdd7_SetVal(BitIoLdd7_DeviceData))
+#define Dir_y_SetVal() (BitIoLdd8_SetVal(BitIoLdd8_DeviceData))
 
 /*
 ** ===================================================================
@@ -204,7 +204,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Dir_y_NegVal() (BitIoLdd7_NegVal(BitIoLdd7_DeviceData))
+#define Dir_y_NegVal() (BitIoLdd8_NegVal(BitIoLdd8_DeviceData))
 
 /* END Dir_y. */
 

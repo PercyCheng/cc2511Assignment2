@@ -456,17 +456,17 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
-  <Bean name="y_step" type="BitIO">
+  <Bean name="z_step" type="BitIO">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="y_step" />
-      <Pin_for_I_O v="PTA5/USB_CLKIN/FTM0_CH2/I2S0_TX_BCLK/JTAG_TRST_b" />
+      <Component_name v="z_step" />
+      <Pin_for_I_O v="ADC1_SE5b/CMP0_IN3/PTC9/FTM3_CH5/I2S0_RX_BCLK/FBa_AD6/FTM2_FLT0" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />
         <Template v="BitIO_LDD" />
         <Properties>
           <Component_name v="BitIoLdd2" />
-          <Pin_for_I_O v="PTA5/USB_CLKIN/FTM0_CH2/I2S0_TX_BCLK/JTAG_TRST_b" />
+          <Pin_for_I_O v="ADC1_SE5b/CMP0_IN3/PTC9/FTM3_CH5/I2S0_RX_BCLK/FBa_AD6/FTM2_FLT0" />
           <Direction v="Input/Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
@@ -519,17 +519,17 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
-  <Bean name="z_step" type="BitIO">
+  <Bean name="y_step" type="BitIO">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="z_step" />
-      <Pin_for_I_O v="ADC1_SE5b/CMP0_IN3/PTC9/FTM3_CH5/I2S0_RX_BCLK/FBa_AD6/FTM2_FLT0" />
+      <Component_name v="y_step" />
+      <Pin_for_I_O v="PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/FBa_AD10/CMP0_OUT/FTM0_CH2" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />
         <Template v="BitIO_LDD" />
         <Properties>
           <Component_name v="BitIoLdd3" />
-          <Pin_for_I_O v="ADC1_SE5b/CMP0_IN3/PTC9/FTM3_CH5/I2S0_RX_BCLK/FBa_AD6/FTM2_FLT0" />
+          <Pin_for_I_O v="PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/FBa_AD10/CMP0_OUT/FTM0_CH2" />
           <Direction v="Input/Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
@@ -592,7 +592,7 @@
         <Interrupt v="INT_FTM2" />
         <Interrupt_priority v="medium priority" />
       </boolgroup>
-      <Resolution v="0.095367 &amp;#181;s" />
+      <Resolution v="100 &amp;#181;s" />
       <Same_resolution_in_modes v="yes" />
       <Component_uses_entire_timer v="no" />
       <group name="Initialization">
@@ -614,9 +614,9 @@
               <Interrupt v="INT_FTM2" />
               <Interrupt_priority v="medium priority" />
             </boolgroup>
-            <Resolution v="0.095367 &amp;#181;s" />
+            <Resolution v="100 &amp;#181;s" />
             <SW_counter v="32-bit" />
-            <Maximum_time_of_event v="409.598146117632 sec" />
+            <Maximum_time_of_event v="429465.5996770386 sec" />
             <group name="Initialization">
               <Enabled_in_init__code v="yes" />
             </group>
@@ -681,7 +681,7 @@
         <group name="Channel 0">
           <enumgroup name="Mode" v="Compare">
             <Compare v="FTM2_C1V" />
-            <Offset v="0.095367 &amp;#181;s" />
+            <Offset v="100 &amp;#181;s" />
             <enumgroup name="Output on compare" v="Disconnect">
               <EmptySection_DummyValue />
             </enumgroup>
@@ -1114,17 +1114,17 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
-  <Bean name="Dir_y" type="BitIO">
+  <Bean name="Dir_z" type="BitIO">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="Dir_y" />
-      <Pin_for_I_O v="PTA13/LLWU_P4/FTM1_CH1/I2S0_TX_FS/FTM1_QD_PHB" />
+      <Component_name v="Dir_z" />
+      <Pin_for_I_O v="CMP0_IN1/PTC7/SPI0_SIN/USB_SOF_OUT/I2S0_RX_FS/FBa_AD8" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />
         <Template v="BitIO_LDD" />
         <Properties>
           <Component_name v="BitIoLdd7" />
-          <Pin_for_I_O v="PTA13/LLWU_P4/FTM1_CH1/I2S0_TX_FS/FTM1_QD_PHB" />
+          <Pin_for_I_O v="CMP0_IN1/PTC7/SPI0_SIN/USB_SOF_OUT/I2S0_RX_FS/FBa_AD8" />
           <Direction v="Input/Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
@@ -1177,10 +1177,10 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
-  <Bean name="Dir_z" type="BitIO">
+  <Bean name="Dir_y" type="BitIO">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="Dir_z" />
+      <Component_name v="Dir_y" />
       <Pin_for_I_O v="CMP0_IN1/PTC7/SPI0_SIN/USB_SOF_OUT/I2S0_RX_FS/FBa_AD8" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />
@@ -1254,7 +1254,7 @@
           <Direction v="Input/Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
-            <Init__value v="1" />
+            <Init__value v="0" />
             <Auto_initialization v="yes" />
           </group>
           <Safe_mode v="yes" />
@@ -1281,7 +1281,7 @@
       <Direction v="Input/Output" />
       <group name="Initialization">
         <Init__direction v="Output" />
-        <Init__value v="1" />
+        <Init__value v="0" />
       </group>
       <Safe_mode v="yes" />
       <Optimization_for v="speed" />
@@ -1317,7 +1317,7 @@
           <Direction v="Input/Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
-            <Init__value v="1" />
+            <Init__value v="0" />
             <Auto_initialization v="yes" />
           </group>
           <Safe_mode v="yes" />
@@ -1344,7 +1344,7 @@
       <Direction v="Input/Output" />
       <group name="Initialization">
         <Init__direction v="Output" />
-        <Init__value v="1" />
+        <Init__value v="0" />
       </group>
       <Safe_mode v="yes" />
       <Optimization_for v="speed" />
@@ -1380,7 +1380,7 @@
           <Direction v="Input/Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
-            <Init__value v="1" />
+            <Init__value v="0" />
             <Auto_initialization v="yes" />
           </group>
           <Safe_mode v="yes" />
@@ -1407,7 +1407,7 @@
       <Direction v="Input/Output" />
       <group name="Initialization">
         <Init__direction v="Output" />
-        <Init__value v="1" />
+        <Init__value v="0" />
       </group>
       <Safe_mode v="yes" />
       <Optimization_for v="speed" />
@@ -1618,10 +1618,10 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
-  <Bean name="Reset_z" type="BitIO">
+  <Bean name="Reset_y" type="BitIO">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="Reset_z" />
+      <Component_name v="Reset_y" />
       <Pin_for_I_O v="ADC1_SE4b/CMP0_IN2/PTC8/FTM3_CH4/I2S0_MCLK/FBa_AD7" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />
@@ -1632,7 +1632,7 @@
           <Direction v="Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
-            <Init__value v="0" />
+            <Init__value v="1" />
             <Auto_initialization v="yes" />
           </group>
           <Safe_mode v="yes" />
@@ -1659,7 +1659,7 @@
       <Direction v="Output" />
       <group name="Initialization">
         <Init__direction v="Output" />
-        <Init__value v="0" />
+        <Init__value v="1" />
       </group>
       <Safe_mode v="yes" />
       <Optimization_for v="speed" />
@@ -1681,10 +1681,10 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
-  <Bean name="Sleep_z" type="BitIO">
+  <Bean name="Sleep_y" type="BitIO">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="Sleep_z" />
+      <Component_name v="Sleep_y" />
       <Pin_for_I_O v="PTA12/FTM1_CH0/I2S0_TXD0/FTM1_QD_PHA" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />
@@ -1695,7 +1695,7 @@
           <Direction v="Output" />
           <group name="Initialization">
             <Init__direction v="Output" />
-            <Init__value v="0" />
+            <Init__value v="1" />
             <Auto_initialization v="yes" />
           </group>
           <Safe_mode v="yes" />
@@ -1722,7 +1722,7 @@
       <Direction v="Output" />
       <group name="Initialization">
         <Init__direction v="Output" />
-        <Init__value v="0" />
+        <Init__value v="1" />
       </group>
       <Safe_mode v="yes" />
       <Optimization_for v="speed" />
@@ -1744,10 +1744,10 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
-  <Bean name="Reset_y" type="BitIO">
+  <Bean name="Reset_z" type="BitIO">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="Reset_y" />
+      <Component_name v="Reset_z" />
       <Pin_for_I_O v="PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/FBa_AD10/CMP0_OUT/FTM0_CH2" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />
@@ -1807,10 +1807,10 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
-  <Bean name="Sleep_y" type="BitIO">
+  <Bean name="Sleep_z" type="BitIO">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="Sleep_y" />
+      <Component_name v="Sleep_z" />
       <Pin_for_I_O v="ADC1_SE6b/PTC10/I2C1_SCL/FTM3_CH6/I2S0_RX_FS/FBa_AD5" />
       <inhrbean type="BitIO_LDD">
         <Enabled v="Y" />

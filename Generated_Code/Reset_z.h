@@ -7,7 +7,7 @@
 **     Version     : Component 02.086, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-21, 14:57, # CodeGen: 32
+**     Date/Time   : 2019-10-26, 12:07, # CodeGen: 35
 **     Abstract    :
 **         This component "BitIO" implements an one-bit input/output.
 **         It uses one bit/pin of a port.
@@ -16,12 +16,12 @@
 **         (if supported by target language and compiler).
 **     Settings    :
 **          Component name                                 : Reset_z
-**          Pin for I/O                                    : ADC1_SE4b/CMP0_IN2/PTC8/FTM3_CH4/I2S0_MCLK/FBa_AD7
+**          Pin for I/O                                    : PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/FBa_AD10/CMP0_OUT/FTM0_CH2
 **          BitIO_LDD                                      : BitIO_LDD
 **          Direction                                      : Output
 **          Initialization                                 : 
 **            Init. direction                              : Output
-**            Init. value                                  : 0
+**            Init. value                                  : 1
 **          Safe mode                                      : yes
 **          Optimization for                               : speed
 **     Contents    :
@@ -87,7 +87,7 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* Include inherited beans */
-#include "BitIoLdd12.h"
+#include "BitIoLdd14.h"
 
 #include "Cpu.h"
 
@@ -115,7 +115,7 @@ extern "C" {
 
 ** ===================================================================
 */
-#define Reset_z_GetVal() (BitIoLdd12_GetVal(BitIoLdd12_DeviceData))
+#define Reset_z_GetVal() (BitIoLdd14_GetVal(BitIoLdd14_DeviceData))
 
 /*
 ** ===================================================================
@@ -130,7 +130,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Reset_z_PutVal(Val) (BitIoLdd12_PutVal(BitIoLdd12_DeviceData, (Val)))
+#define Reset_z_PutVal(Val) (BitIoLdd14_PutVal(BitIoLdd14_DeviceData, (Val)))
 
 /*
 ** ===================================================================
@@ -141,7 +141,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Reset_z_ClrVal() (BitIoLdd12_ClrVal(BitIoLdd12_DeviceData))
+#define Reset_z_ClrVal() (BitIoLdd14_ClrVal(BitIoLdd14_DeviceData))
 
 /*
 ** ===================================================================
@@ -152,7 +152,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define Reset_z_SetVal() (BitIoLdd12_SetVal(BitIoLdd12_DeviceData))
+#define Reset_z_SetVal() (BitIoLdd14_SetVal(BitIoLdd14_DeviceData))
 
 /* END Reset_z. */
 

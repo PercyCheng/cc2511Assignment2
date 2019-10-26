@@ -7,7 +7,7 @@
 **     Version     : Component 02.086, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-21, 14:19, # CodeGen: 28
+**     Date/Time   : 2019-10-26, 12:07, # CodeGen: 35
 **     Abstract    :
 **         This component "BitIO" implements an one-bit input/output.
 **         It uses one bit/pin of a port.
@@ -15,7 +15,7 @@
 **         (if supported by target language and compiler).
 **     Settings    :
 **          Component name                                 : y_step
-**          Pin for I/O                                    : PTA5/USB_CLKIN/FTM0_CH2/I2S0_TX_BCLK/JTAG_TRST_b
+**          Pin for I/O                                    : PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/FBa_AD10/CMP0_OUT/FTM0_CH2
 **          BitIO_LDD                                      : BitIO_LDD
 **          Direction                                      : Input/Output
 **          Initialization                                 : 
@@ -87,7 +87,7 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* Include inherited beans */
-#include "BitIoLdd2.h"
+#include "BitIoLdd3.h"
 
 #include "Cpu.h"
 
@@ -110,7 +110,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define y_step_SetDir(Dir) (BitIoLdd2_SetDir(BitIoLdd2_DeviceData, (Dir)))
+#define y_step_SetDir(Dir) (BitIoLdd3_SetDir(BitIoLdd3_DeviceData, (Dir)))
 
 /*
 ** ===================================================================
@@ -128,7 +128,7 @@ extern "C" {
 
 ** ===================================================================
 */
-#define y_step_GetVal() (BitIoLdd2_GetVal(BitIoLdd2_DeviceData))
+#define y_step_GetVal() (BitIoLdd3_GetVal(BitIoLdd3_DeviceData))
 
 /*
 ** ===================================================================
@@ -150,7 +150,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define y_step_PutVal(Val) (BitIoLdd2_PutVal(BitIoLdd2_DeviceData, (Val)))
+#define y_step_PutVal(Val) (BitIoLdd3_PutVal(BitIoLdd3_DeviceData, (Val)))
 
 /*
 ** ===================================================================
@@ -168,7 +168,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define y_step_ClrVal() (BitIoLdd2_ClrVal(BitIoLdd2_DeviceData))
+#define y_step_ClrVal() (BitIoLdd3_ClrVal(BitIoLdd3_DeviceData))
 
 /*
 ** ===================================================================
@@ -186,7 +186,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define y_step_SetVal() (BitIoLdd2_SetVal(BitIoLdd2_DeviceData))
+#define y_step_SetVal() (BitIoLdd3_SetVal(BitIoLdd3_DeviceData))
 
 /*
 ** ===================================================================
@@ -204,7 +204,7 @@ extern "C" {
 **     Returns     : Nothing
 ** ===================================================================
 */
-#define y_step_NegVal() (BitIoLdd2_NegVal(BitIoLdd2_DeviceData))
+#define y_step_NegVal() (BitIoLdd3_NegVal(BitIoLdd3_DeviceData))
 
 /* END y_step. */
 

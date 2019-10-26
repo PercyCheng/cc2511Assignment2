@@ -7,7 +7,7 @@
 **     Version     : Component 01.033, Driver 01.03, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-21, 14:19, # CodeGen: 28
+**     Date/Time   : 2019-10-26, 11:47, # CodeGen: 0
 **     Abstract    :
 **         The HAL BitIO component provides a low level API for unified
 **         access to general purpose digital input/output pins across
@@ -17,7 +17,7 @@
 **         portable to various microprocessors.
 **     Settings    :
 **          Component name                                 : BitIoLdd3
-**          Pin for I/O                                    : ADC1_SE5b/CMP0_IN3/PTC9/FTM3_CH5/I2S0_RX_BCLK/FBa_AD6/FTM2_FLT0
+**          Pin for I/O                                    : PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/FBa_AD10/CMP0_OUT/FTM0_CH2
 **          Direction                                      : Input/Output
 **          Initialization                                 : 
 **            Init. direction                              : Output
@@ -120,7 +120,7 @@ extern "C" {
 /* Definition of implementation constants */
 #define BitIoLdd3_MODULE_BASE_ADDRESS PTC_BASE_PTR /*!< Name of macro used as the base address */
 #define BitIoLdd3_PORTCONTROL_BASE_ADDRESS PORTC_BASE_PTR /*!< Name of macro used as the base address */
-#define BitIoLdd3_PORT_MASK 0x0200U    /*!< Mask of the allocated pin from the port */
+#define BitIoLdd3_PORT_MASK 0x20U      /*!< Mask of the allocated pin from the port */
 
 
 

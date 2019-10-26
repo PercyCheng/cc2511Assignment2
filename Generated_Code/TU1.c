@@ -7,7 +7,7 @@
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-23, 14:26, # CodeGen: 34
+**     Date/Time   : 2019-10-26, 12:07, # CodeGen: 35
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -27,7 +27,7 @@
 **            Channel 0                                    : 
 **              Mode                                       : Compare
 **                Compare                                  : FTM2_C1V
-**                Offset                                   : 10 ms
+**                Offset                                   : 1 ms
 **                Output on compare                        : Disconnect
 **                Interrupt                                : Enabled
 **                  Interrupt                              : INT_FTM2
@@ -203,15 +203,15 @@ LDD_TDeviceData* TU1_Init(LDD_TUserData *UserDataPtr)
   FTM2_MOD = FTM_MOD_MOD(0xFFFF);      /* Set up modulo register */
   /* FTM2_C1SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,CHIE=1,MSB=0,MSA=1,ELSB=0,ELSA=0,ICRST=0,DMA=0 */
   FTM2_C1SC = (FTM_CnSC_CHIE_MASK | FTM_CnSC_MSA_MASK); /* Set up channel status and control register */
-  /* FTM2_C1V: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,VAL=0xCCCD */
-  FTM2_C1V = FTM_CnV_VAL(0xCCCD);      /* Set up channel value register */
+  /* FTM2_C1V: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,VAL=0x51EC */
+  FTM2_C1V = FTM_CnV_VAL(0x51EC);      /* Set up channel value register */
   DeviceDataPrv->EnEvents = 0x01U;     /* Enable selected events */
   /* NVICIP44: PRI44=0x70 */
   NVICIP44 = NVIC_IP_PRI44(0x70);
   /* NVICISER1: SETENA|=0x1000 */
   NVICISER1 |= NVIC_ISER_SETENA(0x1000);
-  /* FTM2_SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,TOF=0,TOIE=0,CPWMS=0,CLKS=1,PS=2 */
-  FTM2_SC = (FTM_SC_CLKS(0x01) | FTM_SC_PS(0x02)); /* Set up status and control register */
+  /* FTM2_SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,TOF=0,TOIE=0,CPWMS=0,CLKS=1,PS=0 */
+  FTM2_SC = (FTM_SC_CLKS(0x01) | FTM_SC_PS(0x00)); /* Set up status and control register */
   /* Registration of the device structure */
   PE_LDD_RegisterDeviceStructure(PE_LDD_COMPONENT_TU1_ID,DeviceDataPrv);
   return ((LDD_TDeviceData *)DeviceDataPrv); /* Return pointer to the device data structure */

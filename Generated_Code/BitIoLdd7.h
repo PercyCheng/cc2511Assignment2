@@ -7,7 +7,7 @@
 **     Version     : Component 01.033, Driver 01.03, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-10-21, 14:19, # CodeGen: 28
+**     Date/Time   : 2019-10-26, 11:47, # CodeGen: 0
 **     Abstract    :
 **         The HAL BitIO component provides a low level API for unified
 **         access to general purpose digital input/output pins across
@@ -17,7 +17,7 @@
 **         portable to various microprocessors.
 **     Settings    :
 **          Component name                                 : BitIoLdd7
-**          Pin for I/O                                    : PTA13/LLWU_P4/FTM1_CH1/I2S0_TX_FS/FTM1_QD_PHB
+**          Pin for I/O                                    : CMP0_IN1/PTC7/SPI0_SIN/USB_SOF_OUT/I2S0_RX_FS/FBa_AD8
 **          Direction                                      : Input/Output
 **          Initialization                                 : 
 **            Init. direction                              : Output
@@ -103,7 +103,7 @@ extern "C" {
 
 
 /*! Peripheral base address of a device allocated by the component. This constant can be used directly in PDD macros. */
-#define BitIoLdd7_PRPH_BASE_ADDRESS  0x400FF000U
+#define BitIoLdd7_PRPH_BASE_ADDRESS  0x400FF080U
   
 /*! Device data structure pointer used when auto initialization property is enabled. This constant can be passed as a first parameter to all component's methods. */
 #define BitIoLdd7_DeviceData  ((LDD_TDeviceData *)PE_LDD_GetDeviceStructure(PE_LDD_COMPONENT_BitIoLdd7_ID))
@@ -118,9 +118,9 @@ extern "C" {
 #define BitIoLdd7_NegVal_METHOD_ENABLED /*!< NegVal method of the component BitIoLdd7 is enabled (generated) */
 
 /* Definition of implementation constants */
-#define BitIoLdd7_MODULE_BASE_ADDRESS PTA_BASE_PTR /*!< Name of macro used as the base address */
-#define BitIoLdd7_PORTCONTROL_BASE_ADDRESS PORTA_BASE_PTR /*!< Name of macro used as the base address */
-#define BitIoLdd7_PORT_MASK 0x2000U    /*!< Mask of the allocated pin from the port */
+#define BitIoLdd7_MODULE_BASE_ADDRESS PTC_BASE_PTR /*!< Name of macro used as the base address */
+#define BitIoLdd7_PORTCONTROL_BASE_ADDRESS PORTC_BASE_PTR /*!< Name of macro used as the base address */
+#define BitIoLdd7_PORT_MASK 0x80U      /*!< Mask of the allocated pin from the port */
 
 
 

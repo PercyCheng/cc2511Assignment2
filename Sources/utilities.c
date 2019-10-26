@@ -78,12 +78,33 @@ int delay(int time_expect) {
 	word time;
 	FC321_Reset();
 	do {
-		FC321_GetTimeMS(&time);
+		FC321_GetTimeUS(&time);
 	} while (time < time_expect);
 }
 void GUI_reset() {
 
 }
+void driveMotorX(int delay_time){
+	x_step_NegVal();
+	delay(delay_time);
+	x_step_NegVal();
+	delay(delay_time);
+}
+
+void driveMotorY(int delay_time){
+	y_step_NegVal();
+	delay(delay_time);
+	y_step_NegVal();
+	delay(delay_time);
+}
+
+void driveMotorZ(int delay_time){
+	z_step_NegVal();
+	delay(delay_time);
+	z_step_NegVal();
+	delay(delay_time);
+}
+
 
 
 void box(int x_step_pos, int y_step_pos, int length, int hight, char colour_f,
@@ -111,7 +132,7 @@ void GUI_title(int x, int y, int z, int p){
 	Term1_Cls();
 	// Display main GUI
 	box(2, 2, 46, 5, clYellow, clYellow);
-	Term1_MoveTo(12, 2);
+	Term1_MoveTo(15, 2);
 	Term1_SetColor(clBlack, clYellow);
 	Term1_SendStr("CC2511 A2 Group3 ");
 	Term1_SetColor(clWhite, clBlack);
@@ -235,9 +256,7 @@ void manual_movement(int x,int y,int z,int p) {
 			if(x<255){
 				//move x_step +
 				Dir_x_PutVal(1);
-				x_step_NegVal();
-				delay(50);
-				x_step_NegVal();
+				driveMotorX(10);
 				// New x_step position in relation to set zero point
 				x++;
 				Term1_MoveTo(55,3);
@@ -257,9 +276,7 @@ void manual_movement(int x,int y,int z,int p) {
 			if (x>0){
 				//move x_step -
 				Dir_x_PutVal(0);
-				x_step_NegVal();
-				delay(50);
-				x_step_NegVal();
+				driveMotorX(10);
 				// New x_step position in relation to set zero point
 				x--;
 				Term1_MoveTo(55,3);
@@ -280,9 +297,7 @@ void manual_movement(int x,int y,int z,int p) {
 			if (y<255){
 				// move y_step +
 				Dir_y_PutVal(1);
-				y_step_NegVal();
-				delay(50);
-				y_step_NegVal();
+				driveMotorY(10);
 				// New y_step position in relation to set zero point
 				y++;
 				Term1_MoveTo(55,4);
@@ -301,9 +316,7 @@ void manual_movement(int x,int y,int z,int p) {
 			if(y>0){
 				//move y_step -
 				Dir_y_PutVal(0);
-				y_step_NegVal();
-				delay(50);
-				y_step_NegVal();
+				driveMotorY(10);
 				// New y_step position in relation to set zero point
 				y--;
 				Term1_MoveTo(55,4);
@@ -323,9 +336,7 @@ void manual_movement(int x,int y,int z,int p) {
 			if (z<255){
 				//move z_step +
 				Dir_z_PutVal(1);
-				z_step_NegVal();
-				//delay(50);
-				z_step_NegVal();
+				driveMotorZ(10);
 				// New x_step position in relation to set zero point
 				z++;
 				Term1_MoveTo(55,5);
@@ -345,9 +356,7 @@ void manual_movement(int x,int y,int z,int p) {
 			if(z > 0){
 				//move z_step -
 				Dir_z_PutVal(0);
-				z_step_NegVal();
-				delay(50);
-				z_step_NegVal();
+				driveMotorZ(10);
 				// New x_step position in relation to set zero point
 				z--;
 				Term1_MoveTo(55,5);
@@ -385,7 +394,7 @@ void manual_movement(int x,int y,int z,int p) {
 				Term1_MoveTo(55,6);
 				Term1_SendStr("    ");
 				Term1_MoveTo(55,6);
-				Term1_SendNum(p);
+				Term1_SendNum(255-p);
 				c = 0;
 			}
 			else{
