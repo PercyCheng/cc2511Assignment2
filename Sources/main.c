@@ -35,9 +35,9 @@
 #include "ASerialLdd1.h"
 #include "x_step.h"
 #include "BitIoLdd1.h"
-#include "z_step.h"
-#include "BitIoLdd2.h"
 #include "y_step.h"
+#include "BitIoLdd2.h"
+#include "z_step.h"
 #include "BitIoLdd3.h"
 #include "FC321.h"
 #include "RealTimeLdd1.h"
@@ -51,9 +51,9 @@
 #include "BitIoLdd5.h"
 #include "Dir_x.h"
 #include "BitIoLdd6.h"
-#include "Dir_z.h"
-#include "BitIoLdd7.h"
 #include "Dir_y.h"
+#include "BitIoLdd7.h"
+#include "Dir_z.h"
 #include "BitIoLdd8.h"
 #include "Mode_1.h"
 #include "BitIoLdd9.h"
@@ -67,13 +67,13 @@
 #include "BitIoLdd16.h"
 #include "Blue_LED.h"
 #include "BitIoLdd17.h"
-#include "Reset_y.h"
-#include "BitIoLdd12.h"
-#include "Sleep_y.h"
-#include "BitIoLdd13.h"
 #include "Reset_z.h"
-#include "BitIoLdd14.h"
+#include "BitIoLdd12.h"
 #include "Sleep_z.h"
+#include "BitIoLdd13.h"
+#include "Reset_y.h"
+#include "BitIoLdd14.h"
+#include "Sleep_y.h"
 #include "BitIoLdd18.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
@@ -106,7 +106,7 @@ int main(void)
 	/* Write your code here */
 
 
-//	RGB('r');
+	LightRGB('7');
 	GUI_title(x,y,z,p);
 	GUI_main();
 
@@ -114,12 +114,14 @@ int main(void)
 //		__asm ("wfi");
 		// Manual Control
 		if (c == '1') {
+			LightRGB(1);
 			GUI_title(x,y,z,p);
 			GUI_manual(x,y,z,p);
 			manual_movement(x,y,z,p);
 
 		}
 		else if (c == '2') {
+			LightRGB(2);
 			GUI_title(x,y,z,p);
 			Term1_MoveTo(5, 9);
 //			Term1_SendStr("Not available now! Choose 1, 2 or 3");
@@ -130,6 +132,7 @@ int main(void)
 		}
 		// set XYZ zero
 		else if (c == '3') {
+			LightRGB(3);
 			z = 0;
 			y = 0;
 			x = 0;
@@ -139,6 +142,13 @@ int main(void)
 			Term1_SendStr("To the zero position for all axis and press Q to return back");
 			manual_movement(x,y,z,p);
 
+		}else if(c == 0){
+			Red_LED_SetVal();
+			Green_LED_SetVal();
+			Blue_LED_SetVal();
+//			LightRGB(0);
+		}else {
+//			LightRGB(0);
 		}
 	}
 	/* For example: for(;;) { } */

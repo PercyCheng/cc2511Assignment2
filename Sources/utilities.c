@@ -165,8 +165,27 @@ void GUI_title(int x, int y, int z, int p){
 }
 
 
-void RGB(char rgb){
-	Blue_LED_NegVal();
+void LightRGB(int rgb){
+	if (rgb == '1'){
+		Red_LED_NegVal();
+	}else if(rgb == '2'){
+		Blue_LED_NegVal();
+	}else if(rgb == '3'){
+		Green_LED_NegVal();
+	}else if(rgb == '4'){
+		Red_LED_NegVal();
+		Blue_LED_NegVal();
+	}else if(rgb == '5' ){
+		Red_LED_NegVal();
+		Green_LED_NegVal();
+	}else if(rgb == '6' ){
+		Blue_LED_NegVal();
+		Green_LED_NegVal();
+	}else if(rgb == '7' ){
+		Blue_LED_NegVal();
+		Green_LED_NegVal();
+		Red_LED_NegVal();
+	}
 
 }
 
@@ -244,6 +263,32 @@ void prompt_add(){
 	c=0;
 }
 
+//Send X Y Z P
+void sendX(int x){
+	Term1_MoveTo(55,3);
+	Term1_SendStr("     ");
+	Term1_MoveTo(55,3);
+	Term1_SendNum(x);
+}
+void sendY(int y){
+	Term1_MoveTo(55,4);
+	Term1_SendStr("     ");
+	Term1_MoveTo(55,4);
+	Term1_SendNum(y);
+}
+void sendZ(int z){
+	Term1_MoveTo(55,5);
+	Term1_SendStr("     ");
+	Term1_MoveTo(55, 5);
+	Term1_SendNum(z);
+}
+void sendP(int p){
+	Term1_MoveTo(55,6);
+	Term1_SendStr("    ");
+	Term1_MoveTo(55,6);
+	Term1_SendNum(p);
+}
+
 //option 1 manual function
 void manual_movement(int x,int y,int z,int p) {
 	do {
@@ -259,10 +304,7 @@ void manual_movement(int x,int y,int z,int p) {
 				driveMotorX(10);
 				// New x_step position in relation to set zero point
 				x++;
-				Term1_MoveTo(55,3);
-				Term1_SendStr("  ");
-				Term1_MoveTo(55,3);
-				Term1_SendNum(x);
+				sendX(x);
 				c = 0;
 			}else{
 				x=255;
@@ -279,10 +321,7 @@ void manual_movement(int x,int y,int z,int p) {
 				driveMotorX(10);
 				// New x_step position in relation to set zero point
 				x--;
-				Term1_MoveTo(55,3);
-				Term1_SendStr("  ");
-				Term1_MoveTo(55, 3);
-				Term1_SendNum(x);
+				sendX(x);
 				c = 0;
 			}else{
 				x=0;
@@ -300,10 +339,7 @@ void manual_movement(int x,int y,int z,int p) {
 				driveMotorY(10);
 				// New y_step position in relation to set zero point
 				y++;
-				Term1_MoveTo(55,4);
-				Term1_SendStr("  ");
-				Term1_MoveTo(55,4);
-				Term1_SendNum(y);
+				sendY(y);
 				c = 0;
 			}else{
 				y=255;
@@ -319,10 +355,7 @@ void manual_movement(int x,int y,int z,int p) {
 				driveMotorY(10);
 				// New y_step position in relation to set zero point
 				y--;
-				Term1_MoveTo(55,4);
-				Term1_SendStr("  ");
-				Term1_MoveTo(55,4);
-				Term1_SendNum(y);
+				sendY(y);
 				c = 0;
 			}else{
 				y=0;
@@ -339,10 +372,7 @@ void manual_movement(int x,int y,int z,int p) {
 				driveMotorZ(10);
 				// New x_step position in relation to set zero point
 				z++;
-				Term1_MoveTo(55,5);
-				Term1_SendStr("  ");
-				Term1_MoveTo(55, 5);
-				Term1_SendNum(z);
+				sendZ(z);
 				c = 0;
 			}else{
 				z=255;
@@ -359,10 +389,7 @@ void manual_movement(int x,int y,int z,int p) {
 				driveMotorZ(10);
 				// New x_step position in relation to set zero point
 				z--;
-				Term1_MoveTo(55,5);
-				Term1_SendStr("  ");
-				Term1_MoveTo(55,5);
-				Term1_SendNum(z);
+				sendZ(z);
 				c = 0;
 			}else{
 				z = 0;
@@ -371,35 +398,36 @@ void manual_movement(int x,int y,int z,int p) {
 			}
 		}
 		//set PWM for drill bit speed
-		else if(c == '.'){
+		else if(c == ','){
 			clean_prompt();
 			if (p < 255){
 				p += 15;
 				PWM1_SetRatio8(p);
-				Term1_MoveTo(55,6);
-				Term1_SendStr("    ");
-				Term1_MoveTo(55,6);
-				Term1_SendNum(p);
+				sendP(255 - p);
 				c = 0;
 			}
 			else{
-				p=0;
+				p = 0;
+				PWM1_SetRatio8(p);
+				sendP(p);
+				c = 0;
+				prompt_reduce();
 			}
 		}
-		else if(c == ','){
+		else if(c == '.'){
 			clean_prompt();
 			if (p > 0){
 				p -= 15;
 				PWM1_SetRatio8(p);
-				Term1_MoveTo(55,6);
-				Term1_SendStr("    ");
-				Term1_MoveTo(55,6);
-				Term1_SendNum(255-p);
+				sendP(255-p);
 				c = 0;
 			}
 			else{
 				p=255;
-
+				PWM1_SetRatio8(p);
+				sendP(p);
+				c = 0;
+				prompt_add();
 			}
 		}
 	} while (c != 'q');

@@ -12,6 +12,8 @@ void resetSpindle(int x, int y);
 void centerSpindle(int x, int y, int boardLength);
 void drawRectangle(int length, int height);
 void moveSpindleTo(int x, int y, int x_before, int y_before);
+void drawProgressBarUP(int x, int barLength, int radius);
+void drawProgressBarSW(int x, int barLength, int radius);
 void drawCircle(int radius);
 
 
